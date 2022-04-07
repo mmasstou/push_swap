@@ -18,8 +18,9 @@ void	cheak_args(t_ps_stk *stk, int argc, char *arg[])
 	while (j < argc)
 	{
 		str = ft_strtrim(arg[j], " ");
-		if (str[0] == '\0' && str[0] == '/')
+		if (str[0] == '\0' || str[0] == '/')
 		{
+			printf("Args Error !\n");
 			exit(1);
 		}
 		printf("str = %s\n",str);
@@ -46,6 +47,7 @@ void	cheak_args(t_ps_stk *stk, int argc, char *arg[])
 		else
 		{
 			// Arg Error
+			printf("Args Error !\n");
 			exit(1);
 		}
 		args++;
