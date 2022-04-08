@@ -1,18 +1,13 @@
 #include "../include/push_swap.h"
 
-char	**cheak_args(t_ps_stk *stk, int argc, char *arg[])
+char	**cheak_args(int argc, char *arg[])
 {
 	int		j;
 	char	*tab;
 	char	*str;
 	char	**args;
-	t_ps_stk *temp;
+	char	**args_f;
 
-	temp = malloc(sizeof(t_ps_stk));
-	temp->a = malloc(sizeof(t_push_swap));
-	temp->b = malloc(sizeof(t_push_swap));
-	if (!temp && !temp->a && !temp->b)
-		return;
 	j = 2;
 	tab = ft_strjoin(arg[1], " ");
 	while (j < argc)
@@ -23,7 +18,7 @@ char	**cheak_args(t_ps_stk *stk, int argc, char *arg[])
 			printf("Args Error !\n");
 			exit(1);
 		}
-		printf("str = %s\n",str);
+		// printf("str = %s\n",str);
 		tab = ft_strrejion(tab, " ");
 		tab = ft_strrejion(tab, str);
 		j++;
@@ -31,6 +26,7 @@ char	**cheak_args(t_ps_stk *stk, int argc, char *arg[])
 	args = ft_split(tab, ' ');
 	
 	j = 0;
+	args_f = args;
 	while (*args)
 	{
 		if (*args[0] == '\0' || !ps_isdigit(*args))
@@ -41,5 +37,5 @@ char	**cheak_args(t_ps_stk *stk, int argc, char *arg[])
 		args++;
 		j++;
 	}
-	return (args);
+	return (args_f);
 }

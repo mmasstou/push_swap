@@ -14,14 +14,22 @@ typedef struct push_swap
 
 }	t_push_swap;
 
-typedef struct ps_stk
-{
-	t_push_swap	*a;
-	t_push_swap	*b;
-} t_ps_stk;
+// typedef struct ps_stk
+// {
+// 	t_push_swap	*a;
+// 	t_push_swap	*b;
+// } t_ps_stk;
 
 
-char	*cheak_args(t_ps_stk *stk, int argc, char *arg[]);
-int		ps_isdigit(char	*str);
-void	ps_error(char *msg);
+char		**cheak_args(int argc, char *arg[]);
+t_push_swap	*manage_args(char **args);
+int			ps_isdigit(char	*str);
+void		ps_error(char *msg);
+
+
+
+// link list 
+t_push_swap	*ps_lstnew(int content);
+void		ps_lstadd_back(t_push_swap **lst, t_push_swap *new);
+
 #endif

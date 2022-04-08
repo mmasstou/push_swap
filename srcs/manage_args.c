@@ -1,13 +1,17 @@
 #include "../include/push_swap.h"
 
-int manage_args(t_ps_stk *stk, char **args)
+t_push_swap *manage_args(char **args)
 {
     int i;
+	t_push_swap *stk;
+	// t_push_swap *tmp;
 
     i = 0;
-    while(args[i])
+	stk = ps_lstnew(ft_atoi(args[i]));
+	stk->prev = NULL;
+    while(args[++i])
     {
-        
+        ps_lstadd_back(&stk, ps_lstnew(ft_atoi(args[i])));
     }
-    return (0);
+    return (stk);
 }
