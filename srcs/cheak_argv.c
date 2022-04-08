@@ -1,6 +1,6 @@
 #include "../include/push_swap.h"
 
-void	cheak_args(t_ps_stk *stk, int argc, char *arg[])
+char	**cheak_args(t_ps_stk *stk, int argc, char *arg[])
 {
 	int		j;
 	char	*tab;
@@ -31,26 +31,15 @@ void	cheak_args(t_ps_stk *stk, int argc, char *arg[])
 	args = ft_split(tab, ' ');
 	
 	j = 0;
-	stk->a->prev = NULL;
-	temp->a = stk->a ;
 	while (*args)
 	{
-		if (*args[0] == '\0')
+		if (*args[0] == '\0' || !ps_isdigit(*args))
 		{
 			printf("%c\n", *args[0]);
-			exit(1);
-		}
-		if (ps_isdigit(*args))
-		{
-			printf("%sargs[%2d]%s = %s%s%d%s\n",_WHITE, j, _END, _BOLD, _BLUE, ft_atoi(*args), _END);
-		}
-		else
-		{
-			// Arg Error
-			printf("Args Error !\n");
 			exit(1);
 		}
 		args++;
 		j++;
 	}
+	return (args);
 }

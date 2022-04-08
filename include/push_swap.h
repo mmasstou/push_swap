@@ -21,7 +21,7 @@ typedef struct ps_stk
 } t_ps_stk;
 
 
-void	cheak_args(t_ps_stk *stk, int argc, char *arg[]);
+char	*cheak_args(t_ps_stk *stk, int argc, char *arg[]);
 int		ps_isdigit(char	*str);
 void	ps_error(char *msg);
 #endif
