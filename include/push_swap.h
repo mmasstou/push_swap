@@ -6,9 +6,12 @@
 # include "../libft/libft.h"
 # include "ps_colors.h"
 
+# define INT_MIN -2147483648
+# define INT_MAX 2147483647
 typedef struct push_swap
 {
 	int					data;
+	int					index;
 	struct push_swap	*next;
 	struct push_swap	*prev;
 

@@ -13,16 +13,16 @@ int	main(int argc, char *argv[])
 	stk_a = manage_args(args);
 	while (stk_a != NULL)
 	{
-		if (stk_a->prev == NULL && stk_a->next != NULL)
-		{
-			printf("prev = 0\ndata = %d\nnext = %d\n----------------------------------------------------\n",stk_a->data, stk_a->next->data);
-		}
-		else if (stk_a->next == NULL)
-		{
-			printf("prev = %d\ndata = %d\nnext = 0\n----------------------------------------------------\n", stk_a->prev->data, stk_a->data);
-		}
-		else	
-			printf("prev = %d\ndata = %d\nnext = %d\n----------------------------------------------------\n",stk_a->prev->data,stk_a->data, stk_a->next->data);
+		// if (stk_a->prev == NULL && stk_a->next != NULL)
+		// {
+		// 	printf("prev = 0\ndata = %d\nnext = %d\n----------------------------------------------------\n",stk_a->data, stk_a->next->data);
+		// }
+		// else if (stk_a->next == NULL && stk_a->prev != NULL)
+		// {
+		// 	printf("prev = %d\ndata = %d\nnext = 0\n----------------------------------------------------\n", stk_a->prev->data, stk_a->data);
+		// }
+		// else	
+			printf("data = %d\n----------------------------------------------------\n",stk_a->data);
 		stk_a = stk_a->next;
 	}
 }

@@ -13,3 +13,11 @@ all: _libft
 _libft : 
 	make bonus -C $(LIBFT_DIR)
 	cp $(LIBFT_DIR)$(LIBFT_NAME) .
+
+push:fclean
+	@git add .
+	@read -p "Message:" message; \
+	git commit -m "$$message"; \
+	git push origin master
+fclean:
+	rm -rf $(NAME) $(LIBFT_NAME)
