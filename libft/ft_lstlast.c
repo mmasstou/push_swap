@@ -14,9 +14,6 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	int	index;
-
-	index = ft_lstsize(lst);
 	if (lst == NULL)
 		return (0);
 	while (lst)

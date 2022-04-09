@@ -22,7 +22,7 @@ int	main(int argc, char *argv[])
 			printf("prev = %d\ndata = %d\nnext = 0\n----------------------------------------------------\n", stk_a->prev->data, stk_a->data);
 		}
 		else	
-			printf("prev = %d\ndata = %d\nnext = %d\n----------------------------------------------------\n",stk_a->data, stk_a->next->data);
+			printf("prev = %d\ndata = %d\nnext = %d\n----------------------------------------------------\n",stk_a->prev->data,stk_a->data, stk_a->next->data);
 		stk_a = stk_a->next;
 	}
 }
