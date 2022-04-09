@@ -27,8 +27,14 @@ int	ps_isdigit(char	*str)
 			{
 				if (str[i] == '-')
 					signe = -signe;
-				str++ ;
+				if (str[i + 1] == '\0')
+				{
+					printf("+++++++++|%c\n",str[i]);
+					printf("Signe with no Number !\n");
+					exit(1);
+				}
 			}
+			
 		}
 		else if (!ft_isdigit(str[i]))
 			return (0);

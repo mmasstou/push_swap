@@ -9,7 +9,16 @@ char	**cheak_args(int argc, char *arg[])
 	char	**args_f;
 
 	j = 2;
+	printf("arg[1] |%s\n", arg[1]);
+	str = ft_strtrim(arg[1], " ");
+	printf("str |%s\n", str);
+	if (!arg[1] || str[0] == '\0')
+	{
+		printf("Emty Args\n");
+		exit(1);
+	}
 	tab = ft_strjoin(arg[1], " ");
+
 	while (j < argc)
 	{
 		str = ft_strtrim(arg[j], " ");
@@ -29,9 +38,10 @@ char	**cheak_args(int argc, char *arg[])
 	args_f = args;
 	while (*args)
 	{
-		if (*args[0] == '\0' || !ps_isdigit(*args))
+		if (*args[0] == '\0' || ps_isdigit(*args) == 0)
 		{
-			printf("%c\n", *args[0]);
+			printf("++++++%c\n", *args[0]);
+			printf("Is not A NUmber\n");
 			exit(1);
 		}
 		args++;
