@@ -11,7 +11,7 @@ t_push_swap *manage_args(char **args)
 	stk->prev = NULL;
     while(args[++i])
     {
-        ps_lstadd_back(&stk, ps_lstnew(ft_atoi(args[i])));
+        ps_lstadd_back(stk, ft_atoi(args[i]));
     }
     return (stk);
 }

@@ -9,5 +9,6 @@ t_push_swap	*ps_lstnew(int content)
 		return (NULL);
 	newelement->data = content;
 	newelement->next = NULL;
+	newelement->prev = NULL;
 	return (newelement);
 }

@@ -3,6 +3,8 @@
 
 # include <stdlib.h>
 # include <stdio.h>
+# include <string.h>
+# include <stdbool.h>
 # include "../libft/libft.h"
 # include "ps_colors.h"
 
@@ -11,7 +13,7 @@
 typedef struct push_swap
 {
 	int					data;
-	int					index;
+	int					key;
 	struct push_swap	*next;
 	struct push_swap	*prev;
 
@@ -33,6 +35,6 @@ void		ps_error(char *msg);
 
 // link list 
 t_push_swap	*ps_lstnew(int content);
-void		ps_lstadd_back(t_push_swap **lst, t_push_swap *new);
+void		ps_lstadd_back(t_push_swap *head, int data);
 
 #endif
