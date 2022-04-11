@@ -6,7 +6,7 @@
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 00:22:31 by mmasstou          #+#    #+#             */
-/*   Updated: 2021/11/23 19:03:05 by mmasstou         ###   ########.fr       */
+/*   Updated: 2022/04/11 16:50:23 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	free_array(char **tab, int nbrele)
 		free(tab[index]);
 }
 
-static void	creat_tab(char **array, char const *s, char delimiter, int nbrele)
+static void	creat_tab(char *array[], char const *s, char delimiter, int nbrele)
 {
 	int		index[2];
 	char	*str;
@@ -69,7 +69,7 @@ static void	creat_tab(char **array, char const *s, char delimiter, int nbrele)
 
 char	**ft_split(char const *s, char delimiter)
 {
-	char	**array;
+	char	*array[];
 	int		nbrele;
 	int		index;
 
