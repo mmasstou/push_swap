@@ -9,10 +9,10 @@
 			"request": "launch",
 			"name": "Db_push_swap",
 			// "program": "${workspaceFolder}/push_swap",
-			"program": "${workspaceFolder}/algo/algo",
+			"program": "${workspaceFolder}/mouvements/a.out",
 			"args": [],
 			// "args": ["0000000000000000000000000012", "55555", "1", "2", "3", "4", "5", "6", "7", "8", " 9 10 11 12"],
-			"cwd": "${workspaceFolder}/algo"
+			"cwd": "${workspaceFolder}/mouvements"
 		}
 	]
 }
