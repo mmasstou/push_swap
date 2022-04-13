@@ -10,7 +10,7 @@ typedef struct Node {
     struct Node* prev;
 }	t_node;
  
- 
+void printList(t_node* head);
 // function to sort a k sorted doubly linked list
 t_node *sortAKSortedDLL(t_node* head, int k)
 {
@@ -66,9 +66,14 @@ t_node *sortAKSortedDLL(t_node* head, int k)
                 temp->next = j;
             if(temp3 != NULL)
                 temp3->prev = temp2;
-			printf("Swap %d with %d",j->data, );
+			if (j->next != NULL && j->prev)
+				printf("\nSwap %d with %d",j->data, j->prev->data);
         }
-          // if j is now the new head
+		printf("\n");
+    	printList(head);
+		printf("\n");
+
+        // if j is now the new head
        // then reset head
         if(j->prev == NULL)
             head = j;
@@ -81,8 +86,7 @@ t_node *sortAKSortedDLL(t_node* head, int k)
 // of the Doubly Linked List
 void push(t_node** head_ref, int new_data)
 {
-    t_node* new_node =
-        (t_node*)malloc(sizeof(t_node));
+    t_node* new_node = (t_node*)malloc(sizeof(t_node));
  
     new_node->data = new_data;
     new_node->prev = NULL;
@@ -108,7 +112,7 @@ int main()
 {
     t_node* head = NULL;
 	int i;
-	int a[] = {10, 11, 23, 44, 8, 15, 3, 9, 12, 45, 56, 45, 444};
+	int a[] = {-10, 101, 23, 44, 8, 515, 4, 9, 12, 45, 56, 45, 444};
 	int length = 13;
     // Create the doubly linked list:
     // 3<->6<->2<->12<->56<->8
