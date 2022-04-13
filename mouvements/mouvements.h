@@ -6,12 +6,14 @@
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 14:48:58 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/12 14:50:04 by mmasstou         ###   ########.fr       */
+/*   Updated: 2022/04/13 14:35:04 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MOUVEMENTS_H
 # define MOUVEMENTS_H
 
-void	pa();
+# include "../include/push_swap.h"
+
+
 #endif

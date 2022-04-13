@@ -19,19 +19,26 @@ typedef struct push_swap
 
 }	t_push_swap;
 
-// typedef struct ps_stk
-// {
-// 	t_push_swap	*a;
-// 	t_push_swap	*b;
-// } t_ps_stk;
+typedef struct ps_stk
+{
+	t_push_swap	*a;
+	t_push_swap	*b;
+} t_stk;
 
+struct Stack {
+    int top;
+    unsigned capacity;
+    t_push_swap* array;
+};
 
 char		**cheak_args(int argc, char *arg[]);
 t_push_swap	*manage_args(char **args);
 int			ps_isdigit(char	*str);
 void		ps_error(char *msg);
 
-
+// DLL
+int		dll_size(t_push_swap *head);
+void	dll_swap(t_push_swap **head);
 
 // link list 
 t_push_swap	*ps_lstnew(int content);
