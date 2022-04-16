@@ -1,5 +1,6 @@
-#include "../include/push_swap.h"
+# include "DLL.h"
 
-bool isEmpty(t_push_swap *head) {
+bool isEmpty(t_ps *head) 
+{
    return (head == NULL);
 }

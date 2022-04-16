@@ -1,26 +1,62 @@
-#include "../include/push_swap.h"
+# include "DLL.h"
 
-void deleteNode(t_push_swap** head_ref, t_push_swap* del)
+void	dll_delone(t_ps** head, char pos)
 {
-    /* base case */
-    if (*head_ref == NULL || del == NULL)
-        return;
- 
-    /* If node to be deleted is head node */
-    if (*head_ref == del)
-        *head_ref = del->next;
- 
-    /* Change next only if node to be
-    deleted is NOT the last node */
-    if (del->next != NULL)
-        del->next->prev = del->prev;
- 
-    /* Change prev only if node to be
-    deleted is NOT the first node */
-    if (del->prev != NULL)
-        del->prev->next = del->next;
- 
-    /* Finally, free the memory occupied by del*/
-    free(del);
-    return;
+	t_ps *temp;
+	int		size;
+
+	size = dll_size(*head);
+	if (size == 0)
+		return ;
+	if (pos == DLL_FIRST)
+	{
+		temp = (*head)->next->prev;
+		(*head)->next->prev = NULL;
+		free(temp);
+		(*head) = (*head)->next;
+	}
+	if (pos == DLL_LAST)
+	{
+		temp = (*head);
+		while ((*head)->next != NULL)
+			(*head) = (*head)->next;
+		(*head)->prev->next = NULL;
+		(*head) = temp;
+	}
 }
+
+// struct node* deleteFirst() {
+
+//    //save reference to first link
+//    struct node *tempLink = head;
+	
+//    //if only one link
+//    if(head->next == NULL){
+//       last = NULL;
+//    } else {
+//       head->next->prev = NULL;
+//    }
+	
+//    head = head->next;
+//    //return the deleted link
+//    return tempLink;
+// }
+
+// //delete link at the last location
+
+// struct node* deleteLast() {
+//    //save reference to last link
+//    struct node *tempLink = last;
+	
+//    //if only one link
+//    if(head->next == NULL) {
+//       head = NULL;
+//    } else {
+//       last->prev->next = NULL;
+//    }
+	
+//    last = last->prev;
+	
+//    //return the deleted link
+//    return tempLink;
+// }
