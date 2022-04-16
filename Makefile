@@ -21,6 +21,6 @@ push:fclean
 	@git add .
 	@read -p "Message:" message; \
 	git commit -m "$$message"; \
-	git push origin master
+	git push -f origin master
 fclean:
 	rm -rf $(NAME) $(LIBFT_NAME)
