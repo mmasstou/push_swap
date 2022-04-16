@@ -72,6 +72,8 @@ void displayBackward() {
       ptr = ptr ->prev;
       
    }
+   printf(" ]");
+
 	
 }
 

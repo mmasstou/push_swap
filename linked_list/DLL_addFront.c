@@ -1,10 +1,10 @@
-#include "../include/push_swap.h"
+# include "DLL.h"
 
-void addfront(t_push_swap **head, int data)
+void dll_addfront(t_ps **head, int data)
 {
-    t_push_swap *temp ;
+    t_ps *temp ;
 
-	temp = (t_push_swap *)malloc(sizeof(t_push_swap));
+	temp = (t_ps *)malloc(sizeof(t_ps));
     if (!temp)
         exit(1);
     temp->data = data;

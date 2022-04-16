@@ -1,6 +1,6 @@
-#include "../include/push_swap.h"
+# include "DLL.h"
 
-int	dll_size(t_push_swap *head)
+int	dll_size(t_ps *head)
 {
 	int	length;
 

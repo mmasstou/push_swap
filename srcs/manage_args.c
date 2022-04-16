@@ -1,15 +1,15 @@
 #include "../include/push_swap.h"
-void	indexing_stack(t_push_swap *stk)
+void	indexing_stack(t_ps *stk)
 {
 	int	i;
 	while ()
 }
 
-t_push_swap *manage_args(char **args)
+t_ps *manage_args(char **args)
 {
     int i;
-	t_push_swap *stk;
-	// t_push_swap *tmp;
+	t_ps *stk;
+	// t_ps *tmp;
 
     i = 0;
 	stk = ps_lstnew(ft_atoi(args[i]));

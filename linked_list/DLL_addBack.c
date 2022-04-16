@@ -1,11 +1,11 @@
-#include "../include/push_swap.h"
+# include "DLL.h"
 
-void	ps_lstadd_back(t_push_swap *head, int data)
+void	dll_addback(t_ps *head, int data)
 {
-	t_push_swap *tmp;
-   t_push_swap *newLink;
+	t_ps *tmp;
+   t_ps *newLink;
 	
-	newLink = (t_push_swap*) malloc(sizeof(t_push_swap));
+	newLink = (t_ps*) malloc(sizeof(t_ps));
 	if (!newLink)
 	{
 		printf("malloc Error !\n");
@@ -18,6 +18,7 @@ void	ps_lstadd_back(t_push_swap *head, int data)
    //create a link
   
    newLink->data = data;
+   newLink->next = NULL;
 
    
    newLink->prev = tmp; 

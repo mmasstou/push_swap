@@ -1,10 +1,10 @@
-#include "../include/push_swap.h"
+# include "DLL.h"
 
-t_push_swap	*ps_lstnew(int content)
+t_ps	*dll_addnew(int content)
 {
-	t_push_swap	*newelement;
+	t_ps	*newelement;
 
-	newelement = (t_push_swap *)malloc(sizeof(t_push_swap));
+	newelement = (t_ps *)malloc(sizeof(t_ps));
 	if (!newelement)
 		return (NULL);
 	newelement->data = content;
