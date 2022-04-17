@@ -16,7 +16,7 @@ void	dll_retate_reverse(t_ps **head_rev)
 {
 	t_ps *temp;
 
-	if (!isempty(*head_rev)||dll_size(*head_rev) <= 1)
+	if (isempty(*head_rev)||dll_size(*head_rev) <= 1)
 		exit(0) ;
 	printf (" ++ dll_retate_reverse ++ \n");
 	temp = (*head_rev);

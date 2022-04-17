@@ -1,5 +1,5 @@
 
-void	sa(t_stk *stk)
+void	sa(t_ps *stk)
 {
 	if (dll_size(stk->a) <= 1)
 		return ;
