@@ -1,10 +1,5 @@
 #include "../include/push_swap.h"
 
-void	cheak_double_arg()
-{
-
-}
-
 char	**cheak_args(int argc, char *arg[])
 {
 	int		j;

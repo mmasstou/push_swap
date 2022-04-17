@@ -1,6 +1,18 @@
-# include "DLL.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   DLL_isEmty.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/17 21:55:48 by mmasstou          #+#    #+#             */
+/*   Updated: 2022/04/17 21:57:19 by mmasstou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-bool isempty(t_ps *head) 
+#include "DLL.h"
+
+bool	isempty(t_ps *head)
 {
-   return (head == NULL);
+	return (head == NULL);
 }

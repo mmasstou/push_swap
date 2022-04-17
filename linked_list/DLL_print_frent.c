@@ -2,7 +2,7 @@
 
 void DLL_PrintFront(t_ps *head)
 {
-	printf("DLL_PrintFront \n [ ");
+	printf("[ ");
 	while (head != NULL)
 	{
 		printf("%d ",head->data);

@@ -245,3 +245,47 @@ bool insertAfter(int key, int newKey, int data) {
    current->next = newLink; 
    return true; 
 }
+
+void swap(Node*& head, Node*& tail, int x, int y)
+{
+ 
+    // Edge Cases
+    if (head == NULL || head->next == NULL
+        || x == y)
+        return;
+ 
+    // Finding the Nodes
+    pair<Node*, Node*> p = find(head, x, y);
+ 
+    Node* Node1 = p.first;
+    Node* Node2 = p.second;
+ 
+    if (Node1 == head)
+        head = Node2;
+    else if (Node2 == head)
+        head = Node1;
+    if (Node1 == tail)
+        tail = Node2;
+    else if (Node2 == tail)
+        tail = Node1;
+ 
+    // Swapping Node1 and Node2
+    Node* temp;
+    temp = Node1->next;
+    Node1->next = Node2->next;
+    Node2->next = temp;
+ 
+    if (Node1->next != NULL)
+        Node1->next->prev = Node1;
+    if (Node2->next != NULL)
+        Node2->next->prev = Node2;
+ 
+    temp = Node1->prev;
+    Node1->prev = Node2->prev;
+    Node2->prev = temp;
+ 
+    if (Node1->prev != NULL)
+        Node1->prev->next = Node1;
+    if (Node2->prev != NULL)
+        Node2->prev->next = Node2;
+}

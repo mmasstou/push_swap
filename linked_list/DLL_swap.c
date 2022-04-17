@@ -3,12 +3,20 @@
 void	dll_swap(t_ps **head)
 {
 	t_ps *temp;
-	int			index;
+	t_ps *i;
+	t_ps *j;
+	// int			index;
 
-	if (dll_size(*head) <= 1)
-		return ;
-	temp = *head;
-	index = temp->data;
-	temp->data = temp->next->data;
-	temp->next->data = index;
+	// if (dll_size(*head) <= 1)
+	// 	return ;
+	// temp = *head;
+	// index = temp->data;
+	// temp->data = temp->next->data;
+	// temp->next->data = index;
+	i = *head;
+	j = (*head)->next;
+	(*head) ->next = j->next;
+	(*head)->prev = j;
+	(*head)->prev->prev = NULL; 
+
 }

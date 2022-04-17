@@ -25,6 +25,22 @@ struct Stack {
     t_ps* array;
 };
 
+// Instructions
+void	sa(t_stk *stk);
+void	sb(t_stk *stk);
+void	ss(t_stk *stk);
+void	ra(t_stk *stk);
+void	rb(t_stk *stk);
+void	rr(t_stk *stk);
+void	rra(t_stk *stk);
+void	rrb(t_stk *stk);
+void	rrr(t_stk *stk);
+void	pa(t_stk *stk);
+void	pb(t_stk *stk);
+
+
+
+
 char		**cheak_args(int argc, char *arg[]);
 t_ps	*manage_args(char **args);
 int			ps_isdigit(char	*str);
