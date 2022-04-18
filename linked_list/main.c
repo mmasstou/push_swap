@@ -33,8 +33,9 @@ int main()
 	// DLL_PrintFront(head);
 	// DLL_PrintFront(head);
 	// printf (" dll_swap \n");
-	dll_swap(&head);
-	dll_swap(&head);
+	ps_indexing(head);
+	// dll_swap(&head);
+	// dll_swap(&head);
 	// dll_swap(&head);
    	DLL_PrintFront(head);
 	// dll_retate(&head);

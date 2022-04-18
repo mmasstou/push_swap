@@ -28,6 +28,7 @@ void 	DLL_PrintFront(t_ps *head);
 void 	DLL_PrintBack(t_ps *head);
 void	dll_retate(t_ps **head);
 void	dll_retate_reverse(t_ps **head);
+void	ps_indexing(t_ps **stack);
 
 
 #endif

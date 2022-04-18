@@ -6,7 +6,7 @@
 #    By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/06 15:54:55 by mmasstou          #+#    #+#              #
-#    Updated: 2022/04/07 13:28:53 by mmasstou         ###   ########.fr        #
+#    Updated: 2022/04/18 17:14:26 by mmasstou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME 		= libft.a
 CFLAGS 		= -Wall -Wextra -Werror 
 CC = cc
 SRCS =	ft_isalnum.c \
+		ft_swap.c \
 		ft_strrejoin.c \
 		ft_si_in.c \
 		ft_isalpha.c \

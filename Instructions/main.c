@@ -17,16 +17,16 @@ int main()
     // dll_addback(&stk->b, 19969);
     // dll_addback(&stk->b, 199);
 	// dll_addback(stk->b, 42429);
-	printf("stack a:");
-   	DLL_PrintFront(stk->a);
-	printf("stack b:");
-   	DLL_PrintFront(stk->b);
+	// printf("stack a:");
+   	// DLL_PrintFront(stk->a);
+	// printf("stack b:");
+   	// DLL_PrintFront(stk->b);
 
 	// sb(stk);
-	ps_indexing()
-	printf("stack a:");
-   	DLL_PrintFront(stk->a);
-	printf("stack b:");
-   	DLL_PrintFront(stk->b);
+	ps_indexing(&stk->a);
+	// printf("stack a:");
+   	// DLL_PrintFront(stk->a);
+	// printf("stack b:");
+   	// DLL_PrintFront(stk->b);
 
 }

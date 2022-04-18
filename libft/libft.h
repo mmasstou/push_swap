@@ -6,7 +6,7 @@
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:38:29 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/07 13:31:20 by mmasstou         ###   ########.fr       */
+/*   Updated: 2022/04/18 17:16:07 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int		ft_isdigit(int d);
 int		ft_isprint(int p);
 int		ft_is_in(char c, char *str);
 char	*ft_strrejion(char *str1, char *str2);
+void	ft_swap(int *x, int *y);
 // ft_str
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
