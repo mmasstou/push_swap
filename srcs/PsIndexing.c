@@ -23,6 +23,7 @@ void	ps_indexing(t_ps **stack)
 		current->key = i;
 		current = current->next;
 	}
-	DLL_PrintFront(*stack);
-	printf("%d\n",j);
+	// printf("\n");
+	// DLL_PrintFront(*stack);
+	// printf("%d\n",j);
 }
