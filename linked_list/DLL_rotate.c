@@ -5,7 +5,7 @@ void	dll_retate(t_ps **head)
 	if (dll_size(*head) <= 1)
 		return ;
 	temp = (*head);
-	dll_addback(*head, temp->data);
+	dll_addback(*head, temp->data, temp->key);
 	dll_delone(head, DLL_FIRST);
 }
 
@@ -18,6 +18,6 @@ void	dll_retate_reverse(t_ps **head_rev)
 	temp = (*head_rev);
 	while (temp->next != NULL)
 		temp = temp->next;
-	dll_addfront(head_rev, temp->data);
+	dll_addfront(head_rev, temp->data, temp->key);
 	dll_delone(head_rev, DLL_LAST);
 }

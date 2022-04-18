@@ -17,9 +17,9 @@ typedef struct push_swap
 # define DLL_FIRST 'f'
 # define DLL_LAST 'l'
 
-t_ps	*dll_addnew(int content);
-void	dll_addback(t_ps *head, int data);
-void 	dll_addfront(t_ps **head, int data);
+t_ps	*dll_addnew(int content, int key);
+void	dll_addback(t_ps *head, int data, int key);
+void 	dll_addfront(t_ps **head, int data, int key);
 void	dll_delone(t_ps **head, char pos);
 bool 	isempty(t_ps *head);
 int		dll_size(t_ps *head);

@@ -2,7 +2,7 @@
 
 void	dll_swap(t_ps **head)
 {
-	t_ps *temp;
+	// t_ps *temp;
 	t_ps *i;
 	t_ps *j;
 	// int			index;
@@ -15,8 +15,8 @@ void	dll_swap(t_ps **head)
 	// temp->next->data = index;
 	i = *head;
 	j = (*head)->next;
-	(*head) ->next = j->next;
-	(*head)->prev = j;
-	(*head)->prev->prev = NULL; 
 
+	(*head)->next = j->next;
+	(*head)->prev = NULL;
+	dll_addfront(head, j->data, j->key);
 }

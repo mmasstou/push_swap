@@ -1,6 +1,6 @@
 # include "DLL.h"
 
-t_ps	*dll_addnew(int content)
+t_ps	*dll_addnew(int content, int key)
 {
 	t_ps	*newelement;
 
@@ -8,6 +8,7 @@ t_ps	*dll_addnew(int content)
 	if (!newelement)
 		return (NULL);
 	newelement->data = content;
+	newelement->key = key;
 	newelement->next = NULL;
 	newelement->prev = NULL;
 	return (newelement);

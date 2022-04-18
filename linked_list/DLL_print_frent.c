@@ -5,7 +5,7 @@ void DLL_PrintFront(t_ps *head)
 	printf("[ ");
 	while (head != NULL)
 	{
-		printf("%d ",head->data);
+		printf("(%d, %d) ",head->data, head->key);
 		head = head->next;
 	}
 	printf("]\n");
@@ -18,7 +18,7 @@ void DLL_PrintBack(t_ps *head)
 		head = head->next;
 	while (head != NULL)
 	{
-		printf("%d ",head->data);
+		printf("(%d, %d) ",head->data, head->key);
 		head = head->prev;
 	}
 	printf("]\n");

@@ -1,6 +1,6 @@
 # include "DLL.h"
 
-void dll_addfront(t_ps **head, int data)
+void dll_addfront(t_ps **head, int data, int key)
 {
     t_ps *temp ;
 
@@ -8,6 +8,7 @@ void dll_addfront(t_ps **head, int data)
     if (!temp)
         exit(1);
     temp->data = data;
+	temp->key = key;
     temp->next = temp->prev = NULL;
     if (!(*head))
         (*head) = temp;

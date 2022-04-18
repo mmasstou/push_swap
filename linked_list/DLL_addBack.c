@@ -1,6 +1,6 @@
 # include "DLL.h"
 
-void	dll_addback(t_ps *head, int data)
+void	dll_addback(t_ps *head, int data, int key)
 {
 	t_ps *tmp;
    t_ps *newLink;
@@ -18,6 +18,7 @@ void	dll_addback(t_ps *head, int data)
    //create a link
   
    newLink->data = data;
+   newLink->key = key;
    newLink->next = NULL;
 
    
