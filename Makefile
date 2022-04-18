@@ -10,7 +10,7 @@ DLL_SRC = $(DLL_DIR)/DLL_findEnd.c $(DLL_DIR)/DLL_rotate.c $(DLL_DIR)/DLL_addBac
 
 INSTR_SRC = $(INSTR)/INSTRswap.c $(INSTR)/INSTRrotate.c  $(INSTR)/INSTRrotate_reverse.c $(INSTR)/INSTRpush.c $(INSTR)/main.c
 
-SRCS = srcs/push_swap.c srcs/cheak_argv.c srcs/ps_errors.c srcs/ps_isdigit.c srcs/manage_args.c  linked_list/ps_lstadd_back.c linked_list/ps_lstnew.c
+SRCS =  srcs/cheak_argv.c srcs/ps_errors.c srcs/ps_isdigit.c srcs/manage_args.c 
 
 DLL_ObJ = $(DLL_SRC:.c=.o)
 INSTR_OBJ = $(INSTR_SRC:.c=.o)

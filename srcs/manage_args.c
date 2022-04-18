@@ -1,9 +1,9 @@
 #include "../include/push_swap.h"
-void	indexing_stack(t_ps *stk)
-{
-	int	i;
-	while ()
-}
+// void	indexing_stack(t_ps *stk)
+// {
+// 	int	i;
+// 	while ()
+// }
 
 t_ps *manage_args(char **args)
 {
@@ -18,6 +18,6 @@ t_ps *manage_args(char **args)
     {
         ps_lstadd_back(stk, ft_atoi(args[i]));
     }
-	indexing_stack(stk);
+	// indexing_stack(stk);
     return (stk);
 }

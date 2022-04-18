@@ -10,36 +10,30 @@ void	cheak_max_min(long *nbr, char c)
 int	ps_isdigit(char	*str)
 {
 	int		i;
-	long	nbr;
-	int	signe;
+	int		signe;
 	long	result;
 
 
 	i = 0;
-	nbr = 0;
 	signe = 1;
 	result = 0;
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			signe = -signe;
+		if (str[i + 1] == '\0')
+		{
+			printf("+++++++++|%c\n",str[i]);
+			printf("Signe with no Number !\n");
+			exit(1);
+		}
+	}
+	result *= signe;
 	while(str[i])
 	{
-		if (i == 0)
-		{
-			if (str[i] == '+' || str[i] == '-')
-			{
-				if (str[i] == '-')
-					signe = -signe;
-				if (str[i + 1] == '\0')
-				{
-					printf("+++++++++|%c\n",str[i]);
-					printf("Signe with no Number !\n");
-					exit(1);
-				}
-			}
-			
-		}
-		else if (!ft_isdigit(str[i]))
+		if (!ft_isdigit(str[i]))
 			return (0);
-		cheak_max_min(&nbr, str[i]);
-		result = nbr * signe;
+		cheak_max_min(&result, str[i]);
 		if (result < INT_MIN )
 		{
 			printf("+++++++++|%ld\n",result);
@@ -54,5 +48,6 @@ int	ps_isdigit(char	*str)
 		}
 		i++;
 	}
+
 	return (1);
 }

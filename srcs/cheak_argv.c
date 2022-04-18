@@ -38,7 +38,7 @@ char	**cheak_args(int argc, char *arg[])
 	args_f = args;
 	while (*args)
 	{
-		cheak_double_arg();
+		// cheak_double_arg();
 		if (*args[0] == '\0' || ps_isdigit(*args) == 0)
 		{
 			printf("++++++%c\n", *args[0]);
