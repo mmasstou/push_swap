@@ -96,19 +96,63 @@ void	ps_sorte_four(t_stk **stk)
 		ps_sorte_three(stk);
 		pa(*stk);
 	}
+}
 
+void	ps_sorte_five(t_stk **stk)
+{
+	t_ps	*temp;
+	int		pos;
+
+	temp = (*stk)->a;
+	pos = 1;
+	while (temp != NULL)
+	{
+		if (temp->key == 0)
+			break;
+		pos++;
+		temp = temp->next;
+	}
+	if (pos == 1)
+	{
+		pb(*stk);
+		ps_sorte_four(stk);
+		pa(*stk);
+	}
+	else if (pos == 2)
+	{
+		sa(*stk);
+		pb(*stk);
+		ps_sorte_four(stk);
+		pa(*stk);
+	}
+	else if (pos == 3)
+	{
+		ra(*stk);
+		sa(*stk);
+		pb(*stk);
+		ps_sorte_four(stk);
+		pa(*stk);
+	}
+	else if (pos == 4)
+	{
+		rra(*stk);
+		rra(*stk);
+		pb(*stk);
+		ps_sorte_four(stk);
+		pa(*stk);
+	}
 }
 
 void	ps_sorte(t_stk **stk, int argc)
 {
 	if (argc == 2)
 		ps_sorte_tow(stk);
-	if (argc == 3)
+	else if (argc == 3)
 		ps_sorte_three(stk);
-	if (argc == 4)
+	else if (argc == 4)
 		ps_sorte_four(stk);
-	if (argc == 5)
-		ps_
+	else if (argc == 5)
+		ps_sorte_five(stk);
 	if (is_sorted((*stk)->a))
 		exit(0);
 }

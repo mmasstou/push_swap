@@ -4,7 +4,6 @@ void	ps_ssg(t_ps **stack)
 {
 	t_ps	*current;
 	t_ps	*temp;
-	int		i;
 	int		j;
 	int		m;
 
@@ -14,7 +13,6 @@ void	ps_ssg(t_ps **stack)
 	printf("Sorted Stack : ");
 	while (current != NULL)
 	{
-		i = 0;
 		temp = *stack;
 		while (temp != NULL)
 		{
@@ -59,7 +57,7 @@ void	ps_print(t_ps *stk_a)
 int	main(int argc, char *argv[])
 {
 	t_stk	*stk;
-	t_ps	*stk_a_temp;
+	// t_ps	*stk_a_temp;
 	char		**args;
 
 	if (argc <= 1)
@@ -75,8 +73,8 @@ int	main(int argc, char *argv[])
 	stk->a = manage_args(args);
 	ps_indexing(&stk->a);
 	ps_sorte(&stk, argc - 1);
-	stk_a_temp = stk->a;
-	ps_print(stk_a_temp);
+	// stk_a_temp = stk->a;
+	// ps_print(stk_a_temp);
 	// while (stk_a_temp != NULL)
 	// {
 	// 	if (stk_a_temp->prev == NULL && stk_a_temp->next != NULL)
