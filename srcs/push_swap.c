@@ -68,7 +68,8 @@ int	main(int argc, char *argv[])
 	if (!stk)
 		return (1);
 	stk->a = malloc(sizeof(t_ps));
-	if (!stk->a)
+	stk->b = malloc(sizeof(t_ps));
+	if (!stk->a || !stk->b)
 		return (1);
 	args = cheak_args(argc, argv);
 	stk->a = manage_args(args);
