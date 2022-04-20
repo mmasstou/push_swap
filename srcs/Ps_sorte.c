@@ -58,12 +58,21 @@ void	ps_sorte_four(t_stk **stk)
 {
 	t_ps	*temp;
 	int		pos;
+	int		index;
 
 	temp = (*stk)->a;
 	pos = 1;
+	index = temp->key;
 	while (temp != NULL)
 	{
-		if (temp->key == 0)
+		if (temp->key < index)
+			index = temp->key;
+		temp = temp->next;
+	}
+	temp = (*stk)->a;
+	while (temp != NULL)
+	{
+		if (temp->key == index)
 			break;
 		pos++;
 		temp = temp->next;
@@ -102,12 +111,21 @@ void	ps_sorte_five(t_stk **stk)
 {
 	t_ps	*temp;
 	int		pos;
+	int		index;
 
 	temp = (*stk)->a;
 	pos = 1;
+	index = temp->key;
 	while (temp != NULL)
 	{
-		if (temp->key == 0)
+		if (temp->key < index)
+			index = temp->key;
+		temp = temp->next;
+	}
+	temp = (*stk)->a;
+	while (temp != NULL)
+	{
+		if (temp->key == index)
 			break;
 		pos++;
 		temp = temp->next;
@@ -136,6 +154,13 @@ void	ps_sorte_five(t_stk **stk)
 	else if (pos == 4)
 	{
 		rra(*stk);
+		rra(*stk);
+		pb(*stk);
+		ps_sorte_four(stk);
+		pa(*stk);
+	}
+	else if (pos == 5)
+	{
 		rra(*stk);
 		pb(*stk);
 		ps_sorte_four(stk);

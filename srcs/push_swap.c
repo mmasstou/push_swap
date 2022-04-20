@@ -69,6 +69,7 @@ int	main(int argc, char *argv[])
 	stk->b = malloc(sizeof(t_ps));
 	if (!stk->a || !stk->b)
 		return (1);
+	stk->b = NULL;
 	args = cheak_args(argc, argv);
 	stk->a = manage_args(args);
 	ps_indexing(&stk->a);
@@ -89,6 +90,6 @@ int	main(int argc, char *argv[])
 	// 		printf("prev = %d\n%s +> data = %d%s\n%s +> key = %d%s\nnext = %d\n-------------------------\n", stk_a_temp->prev->data,_RED, stk_a_temp->data,_END,_YELLOW, stk_a_temp->key,_END, stk_a_temp->next->data);
 	// 	stk_a_temp = stk_a_temp->next;
 	// }
-	// ps_ssg(&stk_a);
+	// ps_ssg(&stk->a);
 	return (0);
 }
