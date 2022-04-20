@@ -10,7 +10,7 @@ DLL_SRC = $(DLL_DIR)/DLL_findEnd.c $(DLL_DIR)/DLL_rotate.c $(DLL_DIR)/DLL_addBac
 
 INSTR_SRC = $(INSTR)/INSTRswap.c $(INSTR)/INSTRrotate.c  $(INSTR)/INSTRrotate_reverse.c $(INSTR)/INSTRpush.c  
 
-SRCS = srcs/push_swap.c  srcs/cheak_argv.c srcs/ps_errors.c srcs/ps_isdigit.c srcs/manage_args.c srcs/PsIndexing.c srcs/PsDoubleValue.c
+SRCS = srcs/push_swap.c  srcs/cheak_argv.c srcs/ps_errors.c srcs/ps_isdigit.c srcs/manage_args.c srcs/PsIndexing.c srcs/PsDoubleValue.c srcs/Ps_sorte.c
 
 OBJS		= $(SRCS:.c=.o)
 DLL_ObJ		= $(DLL_SRC:.c=.o)
@@ -40,7 +40,7 @@ push:fclean
 	git push origin master
 
 clean:
-	@rm -rf $(DLL_ObJ) $(INSTR_OBJ)
+	@rm -rf $(DLL_ObJ) $(INSTR_OBJ) $(OBJS)
 	@make clean -C  $(LIBFT_DIR)
 
 fclean: clean

@@ -43,5 +43,6 @@ t_ps	*manage_args(char **args);
 int		ps_isdigit(char	*str);
 void	ps_error(char *msg);
 void	cheack_double_value(const char **args, int value , int index);
+void	ps_sorte(t_stk **stk, int argc);
 
 #endif
