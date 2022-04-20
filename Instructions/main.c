@@ -1,54 +1,45 @@
 #include "../include/push_swap.h"
 
-void	ps_ssg(t_ps **stack)
-{
-	t_ps	*current;
-	t_ps	*temp;
-	int		i;
-	int		j;
-	int		m;
 
-	current = *stack;
-	j = 0;
-	m= 0;
-	printf("Sorted Stack : ");
-	while (current != NULL)
-	{
-		i = 0;
-		temp = *stack;
-		while (temp != NULL)
-		{
-			j++;
-			if (temp->key == m)
-			{
-				printf("(%d,%d) ",temp->data, temp->key);
-				m++;
-				}
-			temp = temp->next;
-		}
-		current = current->next;
-	}
-	printf("\n");
-	// DLL_PrintFront(*stack);
-	// printf("%d\n",j);
-}
 
-int main()
+int main(int argc, char *argv[])
 {
 	t_stk *stk;
+	int i;
+
+	i = 1;
 
 	stk = (t_stk *)malloc (sizeof(t_stk));
-    stk->a = dll_addnew(1337, 0);
+	argc = 5;
+	cheak_args(argc, argv);
+	manage_args(argv);
+	while (i <= argc)
+	{
+		cheack_double_value(stk, ft_atoi(argv[i]));
+    	dll_addback(stk->a, ft_atoi(argv[i]), 0);
+		i++;
+	}
+    // stk->a = dll_addnew(1337, 0);
     stk->b = dll_addnew(13379, 0);
     // printf("%d\n",head->data);
-    dll_addback(stk->a, 42, 0);
-    dll_addback(stk->a, 1996, 0);
-    dll_addback(stk->a, 1, 0);
-    dll_addback(stk->a, 2, 0);
-    dll_addback(stk->a, 5, 0);
-    dll_addback(stk->a, 7, 0);
-    dll_addback(stk->a, 19, 0);
-	dll_addback(stk->a, 4242, 0);
+	// cheack_double_value(stk, 42);
+    // dll_addback(stk->a, 42, 0);
+	// cheack_double_value(stk, 1996);
+    // dll_addback(stk->a, 1996, 0);
+	// cheack_double_value(stk, 1);
+    // dll_addback(stk->a, 1, 0);
+	// cheack_double_value(stk, 2);
+    // dll_addback(stk->a, 2, 0);
+	// cheack_double_value(stk, 5);
+    // dll_addback(stk->a, 5, 0);
+	// cheack_double_value(stk, 7);
+    // dll_addback(stk->a, 7, 0);
+	// cheack_double_value(stk, 19);
+    // dll_addback(stk->a, 19, 0);
+	// cheack_double_value(stk, 4242);
+	// dll_addback(stk->a, 4242, 0);
+	// cheack_double_value(stk, 00005);
+	// dll_addback(stk->a, 5, 0);
 
 	//  dll_addback(stk->b, 429);
     // dll_addback(&stk->b, 19969);

@@ -2,5 +2,6 @@
 
 void	ps_error(char *msg)
 {
-	ft_printf("%s%s%s",_BOLD, msg, _END);
+	ft_printf("%s%s%s\n",_BOLD, msg, _END);
+	exit(1);
 }

@@ -1,4 +1,17 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    TODO                                               :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/04/20 00:11:39 by mmasstou          #+#    #+#              #
+#    Updated: 2022/04/20 00:11:40 by mmasstou         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 - Swap node function √
-- check for double value 
+- check for double value √
 - indexing stack √
 - start algo √
+	+

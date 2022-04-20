@@ -12,12 +12,10 @@ t_ps *manage_args(char **args)
 	// t_ps *tmp;
 
     i = 0;
-	stk = ps_lstnew(ft_atoi(args[i]));
+	stk = dll_addnew(ft_atoi(args[i]), 0);
 	stk->prev = NULL;
     while(args[++i])
-    {
-        ps_lstadd_back(stk, ft_atoi(args[i]));
-    }
+        dll_addback(stk, ft_atoi(args[i]), 0);
 	// indexing_stack(stk);
     return (stk);
 }

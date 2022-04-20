@@ -37,21 +37,11 @@ void	rrb(t_stk *stk);
 void	rrr(t_stk *stk);
 void	pa(t_stk *stk);
 void	pb(t_stk *stk);
-
-
-
-
-char		**cheak_args(int argc, char *arg[]);
+// srcs
+char	**cheak_args(int argc, char *arg[]);
 t_ps	*manage_args(char **args);
-int			ps_isdigit(char	*str);
-void		ps_error(char *msg);
-
-// DLL
-int		dll_size(t_ps *head);
-void	dll_swap(t_ps **head);
-
-// link list 
-t_ps	*ps_lstnew(int content);
-void		ps_lstadd_back(t_ps *head, int data);
+int		ps_isdigit(char	*str);
+void	ps_error(char *msg);
+void	cheack_double_value(const char **args, int value , int index);
 
 #endif

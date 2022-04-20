@@ -6,47 +6,29 @@ char	**cheak_args(int argc, char *arg[])
 	char	*tab;
 	char	*str;
 	char	**args;
-	char	**args_f;
 
 	j = 2;
-	printf("arg[1] |%s\n", arg[1]);
 	str = ft_strtrim(arg[1], " ");
-	printf("str |%s\n", str);
 	if (!arg[1] || str[0] == '\0')
-	{
-		printf("Emty Args\n");
-		exit(1);
-	}
+		ps_error("Emty Args");
 	tab = ft_strjoin(arg[1], " ");
-
 	while (j < argc)
 	{
 		str = ft_strtrim(arg[j], " ");
 		if (str[0] == '\0' || str[0] == '/')
-		{
-			printf("Args Error !\n");
-			exit(1);
-		}
-		// printf("str = %s\n",str);
+			ps_error("Args Error !");
 		tab = ft_strrejion(tab, " ");
 		tab = ft_strrejion(tab, str);
 		j++;
 	}
 	args = ft_split(tab, ' ');
-	
 	j = 0;
-	args_f = args;
-	while (*args)
+	while (args[j])
 	{
-		// cheak_double_arg();
-		if (*args[0] == '\0' || ps_isdigit(*args) == 0)
-		{
-			printf("++++++%c\n", *args[0]);
-			printf("Is not A NUmber\n");
-			exit(1);
-		}
-		args++;
+		cheack_double_value((const char **)args, ft_atoi(args[j]), j);
+		if (args[j][0] == '\0' || ps_isdigit(args[j]) == 0)
+			ps_error("Error :not A NUmber");
 		j++;
 	}
-	return (args_f);
+	return (args);
 }

@@ -14,6 +14,7 @@ typedef struct push_swap
 	int					data;
 	struct push_swap	*next;
 }	t_ps;
+
 # define DLL_FIRST 'f'
 # define DLL_LAST 'l'
 

@@ -27,6 +27,7 @@ int	ps_isdigit(char	*str)
 			printf("Signe with no Number !\n");
 			exit(1);
 		}
+		i++;
 	}
 	result *= signe;
 	while(str[i])
