@@ -163,31 +163,37 @@ t_env	*create_env(int argc)
 void	ps_sorte_else(t_stk **stk, int argc)
 {
 	t_ps	*temp;
+	t_ps	*tempb;
 	t_env	*env;
 
 
 	// ps_print((*stk)->a);
 	env = create_env(argc);
 	// temp = (*stk)->a;
-	while (dll_size((*stk)->a) != 0)
+	temp = (*stk)->a;
+	tempb = (*stk)->b;
+	while (dll_size(temp) != 0)
 	{
-		temp = (*stk)->a;
-		while (temp != NULL)
+		printf("size +++++++++++++++++++++++%d\n", dll_size(temp));
+		if (temp->key <= env->s_index)
 		{
-			if (temp->key <= env->s_index)
-			{
-				pb(*stk);
-				rb(*stk);
-			}
-			else if (temp->key < (env->s_index + env->e_index))
-			{
-				pb(*stk);
-			}
-			else
-				ra(*stk);
+			pb(*stk);
+			rb(*stk);
 			env->s_index++;
-			temp = temp->next;
 		}
+		else if (temp->key < (env->s_index + env->e_index))
+		{
+			pb(*stk);
+			env->s_index++;
+		}
+		else
+			ra(*stk);
+		if (dll_size(tempb) > 1)
+		{
+			if (tempb->key < tempb->next->key)
+				sb(*stk);
+		}
+			// temp = temp->next;
 	}
 	ps_print((*stk)->b);
 	env->middle = get_middle((*stk)->b);

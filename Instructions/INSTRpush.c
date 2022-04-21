@@ -13,6 +13,8 @@ void	pb(t_stk *stk)
 {
 	t_ps *temp;
 
+	if (stk->a == NULL)
+		return;
 	temp = dll_addnew(stk->a->data, stk->a->key);
 	dll_addfront(&(stk->b), temp->data, temp->key);
 	dll_delone(&(stk->a), DLL_FIRST);
