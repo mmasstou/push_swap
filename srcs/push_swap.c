@@ -30,29 +30,16 @@ void	ps_ssg(t_ps **stack)
 	// DLL_PrintFront(*stack);
 	// printf("%d\n",j);
 }
-void	ps_print(t_ps *stk_a)
-{
-	t_ps *stk_a_temp;
 
-	stk_a_temp = stk_a;
-	while (stk_a_temp != NULL)
-	{
-		if (stk_a_temp->prev == NULL && stk_a_temp->next != NULL)
-		{
-			printf("prev = NULL\n%s +> data = %d%s\n%s +> key = %d%s\nnext = %d\n-------------------------\n",_RED, stk_a_temp->data,_END,_YELLOW, stk_a_temp->key,_END, stk_a_temp->next->data);
-		}
-		else if (stk_a_temp->next == NULL && stk_a_temp->prev != NULL)
-		{
-			printf("prev = %d\n%s +> data = %d%s\n%s +> key = %d%s\nnext = NULL\n-------------------------\n", stk_a_temp->prev->data,_RED, stk_a_temp->data,_END,_YELLOW, stk_a_temp->key,_END);
-		}
-		else if (stk_a_temp->next == NULL && stk_a_temp->prev == NULL)
-		{
-			printf("prev = NULL\n%s +> data = %d%s\n%s +> key = %d%s\nnext = NULL\n-------------------------\n",_RED, stk_a_temp->data,_END,_YELLOW, stk_a_temp->key,_END);
-		}
-		else	
-			printf("prev = %d\n%s +> data = %d%s\n%s +> key = %d%s\nnext = %d\n-------------------------\n", stk_a_temp->prev->data,_RED, stk_a_temp->data,_END,_YELLOW, stk_a_temp->key,_END, stk_a_temp->next->data);
-		stk_a_temp = stk_a_temp->next;
-	}
+int	sizing_stack(char **args)
+{
+	int	size;
+
+	size = 1;
+	while (args[size])
+		size++;
+	return (size);
+
 }
 int	main(int argc, char *argv[])
 {
@@ -73,23 +60,9 @@ int	main(int argc, char *argv[])
 	args = cheak_args(argc, argv);
 	stk->a = manage_args(args);
 	ps_indexing(&stk->a);
-	ps_sorte(&stk, argc - 1);
 	// stk_a_temp = stk->a;
 	// ps_print(stk_a_temp);
-	// while (stk_a_temp != NULL)
-	// {
-	// 	if (stk_a_temp->prev == NULL && stk_a_temp->next != NULL)
-	// 	{
-	// 		printf("prev = NULL\n%s +> data = %d%s\n%s +> key = %d%s\nnext = %d\n-------------------------\n",_RED, stk_a_temp->data,_END,_YELLOW, stk_a_temp->key,_END, stk_a_temp->next->data);
-	// 	}
-	// 	else if (stk_a_temp->next == NULL && stk_a_temp->prev != NULL)
-	// 	{
-	// 		printf("prev = %d\n%s +> data = %d%s\n%s +> key = %d%s\nnext = NULL\n-------------------------\n", stk_a_temp->prev->data,_RED, stk_a_temp->data,_END,_YELLOW, stk_a_temp->key,_END);
-	// 	}
-	// 	else	
-	// 		printf("prev = %d\n%s +> data = %d%s\n%s +> key = %d%s\nnext = %d\n-------------------------\n", stk_a_temp->prev->data,_RED, stk_a_temp->data,_END,_YELLOW, stk_a_temp->key,_END, stk_a_temp->next->data);
-	// 	stk_a_temp = stk_a_temp->next;
-	// }
+	ps_sorte(&stk, sizing_stack(args));
 	// ps_ssg(&stk->a);
 	return (0);
 }

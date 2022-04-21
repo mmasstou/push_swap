@@ -2,14 +2,16 @@
 
 int	get_index_of_min_value(t_ps *stack)
 {
-	int	index;
+	int		index;
+	t_ps	*temp;
 
-	index = stack->key;
-	while (stack != NULL)
+	temp = stack;
+	index = temp->key;
+	while (temp != NULL)
 	{
-		if (stack->key < index)
-			index = stack->key;
-		stack = stack->next;
+		if (temp->key < index)
+			index = temp->key;
+		temp = temp->next;
 	}
 	return (index);
 }

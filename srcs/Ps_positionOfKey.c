@@ -2,15 +2,17 @@
 
 int	position_of_key(t_ps *stack, int index)
 {
-	int	pos;
+	int		pos;
+	t_ps	*temp;
 
+	temp = stack;
 	pos = 1;
-	while (stack != NULL)
+	while (temp != NULL)
 	{
-		if (stack->key == index)
+		if (temp->key == index)
 			break;
 		pos++;
-		stack = stack->next;
+		temp = temp->next;
 	}
 	return (pos);
 }

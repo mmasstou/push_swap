@@ -19,11 +19,16 @@ typedef struct ps_stk
 	t_ps	*b;
 } t_stk;
 
-struct Stack {
-    int top;
-    unsigned capacity;
-    t_ps* array;
-};
+typedef struct env 
+{
+    int s_index;
+    int e_index;
+	int	middle;
+	int	size_stk_a;
+	int	size_stk_b;
+	int	key_position;
+
+} 	t_env;
 
 // Instructions
 void	sa(t_stk *stk);
@@ -46,5 +51,7 @@ void	cheack_double_value(const char **args, int value , int index);
 void	ps_sorte(t_stk **stk, int argc);
 int		get_index_of_min_value(t_ps *stack);
 int		position_of_key(t_ps *stack, int index);
+void	ps_print(t_ps *stk_a);
+int		get_middle(t_ps *stack);
 
 #endif
