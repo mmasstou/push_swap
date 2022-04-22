@@ -24,9 +24,10 @@ typedef struct env
     int s_index;
     int e_index;
 	int	middle;
+	int	middle_position;
 	int	size_stk_a;
 	int	size_stk_b;
-	int	key_position;
+	int	max_key_position;
 
 } 	t_env;
 

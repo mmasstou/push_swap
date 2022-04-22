@@ -160,63 +160,169 @@ t_env	*create_env(int argc)
 	return (env);
 }
 
+// void	ps_sorte_else(t_stk **stk, int argc)
+// {
+// 	t_ps	*temp;
+// 	t_ps	*tempb;
+// 	t_env	*env;
+// 	int		index;
+
+
+// 	// ps_print((*stk)->a);
+// 	env = create_env(argc);
+// 	// temp = (*stk)->a;
+// 	temp = (*stk)->a;
+// 	tempb = (*stk)->b;
+// 	index = dll_size(temp);
+// 	while (index != 0)
+// 	{
+// 		printf("size +++++++++++++++++++++++%d\n", index);
+// 		if (temp->key < env->s_index)
+// 		{
+// 			pb(*stk);
+// 			rb(*stk);
+// 			env->s_index++;
+// 			index--;
+// 		}
+// 		else if (temp->key <= (env->s_index + env->e_index))
+// 		{
+// 			pb(*stk);
+// 			index--;
+// 			env->s_index++;
+// 		}
+// 		else
+// 			ra(*stk);
+// 		// if (dll_size(tempb) > 1)
+// 		// {
+// 		// 	if (tempb->key < tempb->next->key)
+// 		// 		sb(*stk);
+// 		// }
+// 			// temp = temp->next;
+// 	}
+// 	ps_print((*stk)->b);
+// 	env->middle = get_middle((*stk)->b);
+// 	env->size_stk_b = dll_size((*stk)->b);
+// 	// env->key_position = -1;
+// 	env->key_position = 1;
+// 	// printf("%d--%d\n", env->middle, env->size_stk_b);
+// 	while (dll_size((*stk)->b) != 0)
+// 	{
+// 		temp = (*stk)->b;
+// 		while (temp->key != env->middle)
+// 		{
+// 			if ((temp->key - 1) == env->size_stk_b)
+// 			{
+// 				break;
+// 			}
+// 			env->key_position++;
+// 			temp = temp->next;
+// 		}
+// 		if (env->key_position != 1)
+// 			break;
+// 	}
+// 	printf("%d--%d --- %d\n", env->middle, env->size_stk_b, env->key_position);
+// 	ps_error("SATAC B");
+
+// }
+int	find_position_key(t_ps  *stk, int key)
+{
+	int	pos;
+	t_ps	*temp;
+
+	temp = stk;
+	pos = 0;
+	while (temp != NULL)
+	{
+		if (temp->key == key)
+			break;
+		pos++;
+		temp = temp->next;
+	}
+	return (pos);
+}
+
 void	ps_sorte_else(t_stk **stk, int argc)
 {
 	t_ps	*temp;
-	t_ps	*tempb;
 	t_env	*env;
+	int		m;
 
 
 	// ps_print((*stk)->a);
 	env = create_env(argc);
 	// temp = (*stk)->a;
-	temp = (*stk)->a;
-	tempb = (*stk)->b;
-	while (dll_size(temp) != 0)
+	while (dll_size((*stk)->a) != 0)
 	{
-		printf("size +++++++++++++++++++++++%d\n", dll_size(temp));
-		if (temp->key <= env->s_index)
+		temp = (*stk)->a;
+		while (temp != NULL)
 		{
-			pb(*stk);
-			rb(*stk);
-			env->s_index++;
-		}
-		else if (temp->key < (env->s_index + env->e_index))
-		{
-			pb(*stk);
-			env->s_index++;
-		}
-		else
-			ra(*stk);
-		if (dll_size(tempb) > 1)
-		{
-			if (tempb->key < tempb->next->key)
-				sb(*stk);
-		}
-			// temp = temp->next;
-	}
-	ps_print((*stk)->b);
-	env->middle = get_middle((*stk)->b);
-	env->size_stk_b = dll_size((*stk)->b) - 1;
-	// env->key_position = -1;
-	env->key_position = 1;
-	printf("%d--%d\n", env->middle, env->size_stk_b);
-	while (dll_size((*stk)->b) != 0)
-	{
-		temp = (*stk)->b;
-		while (temp->key != env->middle)
-		{
-			if ((temp->key - 1) == env->size_stk_b)
+			if (temp->key <= env->s_index)
 			{
-				break;
+				pb(*stk);
+				rb(*stk);
+				env->s_index++;
 			}
-			env->key_position++;
+			else if (temp->key < (env->s_index + env->e_index))
+			{
+				pb(*stk);
+				env->s_index++;
+			}
+			else
+				ra(*stk);
 			temp = temp->next;
 		}
-		if (env->key_position != 1)
-			break;
+		if (dll_size((*stk)->b) > 1)
+		{
+			if ((*stk)->b->key < (*stk)->b->next->key)
+				sb(*stk);
+		}
 	}
-	printf("%d--%d --- %d\n", env->middle, env->size_stk_b, env->key_position);
+	// ps_print((*stk)->b);
+	// ps_print((*stk)->a);
+	temp = (*stk)->b;
+	env->size_stk_b = dll_size((*stk)->b) - 1;
+	while (env->size_stk_b != 0)
+	{
+		env->middle = get_middle((*stk)->b);
+		env->size_stk_b = dll_size((*stk)->b) - 1;
+		env->max_key_position = find_position_key((*stk)->b, env->size_stk_b);
+		env->middle_position = find_position_key((*stk)->b, env->middle);
+		// printf("env->middle = |%d ****env->middle_position = |%d \nkey = |%d ****key_position = |%d\n",env->middle, env->middle_position, env->size_stk_b, env->max_key_position);
+
+		if (env->max_key_position < env->middle_position)
+		{
+			m = env->size_stk_b - env->max_key_position + 1;
+			while (m--)
+				rrb(*stk);
+			pa(*stk);	
+		}
+		else if (env->max_key_position >= env->middle_position)
+		{
+			m = env->max_key_position;
+			while (m--)
+				rb(*stk);
+			pa(*stk);
+		}
+	}
+	// ps_print((*stk)->a);
+
+	// printf("%d--%d\n", env->middle, 50);
+	// while (dll_size((*stk)->b) != 0)
+	// {
+	// 	temp = (*stk)->b;
+	// 	while (temp->key != env->middle)
+	// 	{
+	// 		if ((temp->key - 1) == env->size_stk_b)
+	// 		{
+	// 			break;
+	// 		}
+	// 		env->key_position++;
+	// 		temp = temp->next;
+	// 	}
+	// 	if (env->key_position != 1)
+	// 		break;
+	// }
+	// printf("%d--%d --- %d\n", env->middle, env->size_stk_b, env->max_key_position);
 	// ps_error("SATAC B");
 
 }
