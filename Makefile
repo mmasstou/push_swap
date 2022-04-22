@@ -35,8 +35,9 @@ _libft :
 	@cp $(LIBFT_DIR)$(LIBFT_NAME) .
 	
 push:fclean
-	@git add . ; \
-	read -p "Message:" message; \
+	@git status
+	@read -p "Files To Add:" files; git add "$$files" 
+	@ read -p "Message:" message; \
 	git commit -m "$$message"; \
 	git push origin master
 
