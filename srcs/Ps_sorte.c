@@ -324,20 +324,20 @@ void	ps_sorte_else(t_stk **stk, int argc)
 		env->max_key_position = find_position_key((*stk)->b, env->size_stk_b);
 		// printf("env->middle = |%d ****env->middle_position = |%d \nkey = |%d ****key_position = |%d\n",env->middle, env->middle_position, env->size_stk_b, env->max_key_position);
 
-		if (env->max_key_position < env->middle_position)
+		if (env->max_key_position <= env->middle_position)
 		{
 			m = env->max_key_position;
-			while (m != 0)
+			while (m > 0)
 			{
 				rb(*stk);
 				m--;
 			}
 			pa(*stk);
 		}
-		else if (env->max_key_position >= env->middle_position)
+		else if (env->max_key_position > env->middle_position)
 		{
-			m = env->size_stk_b - env->max_key_position + 1;
-			while (m != 0)
+			m = env->size_stk_b - env->max_key_position;
+			while (m >= 0)
 			{
 				rrb(*stk);
 				m--;
