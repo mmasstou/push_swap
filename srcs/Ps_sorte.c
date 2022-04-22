@@ -1,4 +1,36 @@
 #include "../include/push_swap.h"
+
+void	p_print(t_ps *stk_a)
+{
+	t_ps *stk_a_temp;
+	int		middle;
+
+	stk_a_temp = stk_a;
+	middle = get_middle(stk_a_temp); 
+	printf("\n");
+	while (stk_a_temp != NULL)
+	{
+		// printf("%s%d%s\n",_RED,stk_a_temp->key,_END);
+
+		printf("%s[%d] index [%d]%s\n",_YELLOW,stk_a_temp->data,stk_a_temp->key, _END);
+
+		// if (stk_a_temp->prev == NULL && stk_a_temp->next != NULL)
+		// {
+		// 	printf("prev = NULL\n%s +> data = %d%s\n%s +> key = %d%s\nnext = %d\n-------------------------\n",_RED, stk_a_temp->data,_END,_YELLOW, stk_a_temp->key,_END, stk_a_temp->next->data);
+		// }
+		// else if (stk_a_temp->next == NULL && stk_a_temp->prev != NULL)
+		// {
+		// 	printf("prev = %d\n%s +> data = %d%s\n%s +> key = %d%s\nnext = NULL\n-------------------------\n", stk_a_temp->prev->data,_RED, stk_a_temp->data,_END,_YELLOW, stk_a_temp->key,_END);
+		// }
+		// else if (stk_a_temp->next == NULL && stk_a_temp->prev == NULL)
+		// {
+		// 	printf("prev = NULL\n%s +> data = %d%s\n%s +> key = %d%s\nnext = NULL\n-------------------------\n",_RED, stk_a_temp->data,_END,_YELLOW, stk_a_temp->key,_END);
+		// }
+		// else	
+		// 	printf("prev = %d\n%s +> data = %d%s\n%s +> key = %d%s\nnext = %d\n-------------------------\n", stk_a_temp->prev->data,_RED, stk_a_temp->data,_END,_YELLOW, stk_a_temp->key,_END, stk_a_temp->next->data);
+		stk_a_temp = stk_a_temp->next;
+	}
+}
 int		is_sorted(t_ps *stk)
 {
 	t_ps *temp;
@@ -139,12 +171,9 @@ void	ps_sorte_five(t_stk **stk)
 // ps_sorte_else
 int	create_range(int argc)
 {
-	if (argc >= 100)
+	if (argc <= 250)
 		return (15);
-	else if (argc >= 500)
-		return (25);
-	else 
-		return (11);
+	return (25);
 }
 
 t_env	*create_env(int argc)
@@ -246,6 +275,8 @@ void	ps_sorte_else(t_stk **stk, int argc)
 	t_ps	*temp;
 	t_env	*env;
 	int		m;
+	// int	pos;
+
 
 
 	// ps_print((*stk)->a);
@@ -262,7 +293,7 @@ void	ps_sorte_else(t_stk **stk, int argc)
 				rb(*stk);
 				env->s_index++;
 			}
-			else if (temp->key < (env->s_index + env->e_index))
+			else if (temp->key <= (env->s_index + env->e_index))
 			{
 				pb(*stk);
 				env->s_index++;
@@ -277,33 +308,48 @@ void	ps_sorte_else(t_stk **stk, int argc)
 				sb(*stk);
 		}
 	}
+	// printf("Stack b\n");
+
 	// ps_print((*stk)->b);
 	// ps_print((*stk)->a);
 	temp = (*stk)->b;
+	// env->size_stk_b = dll_size((*stk)->b);
 	env->size_stk_b = dll_size((*stk)->b) - 1;
-	while (env->size_stk_b != 0)
+	while (env->size_stk_b >= 0)
 	{
 		env->middle = get_middle((*stk)->b);
-		env->size_stk_b = dll_size((*stk)->b) - 1;
-		env->max_key_position = find_position_key((*stk)->b, env->size_stk_b);
+		if (env->middle == -1)
+			break;
 		env->middle_position = find_position_key((*stk)->b, env->middle);
+		env->max_key_position = find_position_key((*stk)->b, env->size_stk_b);
 		// printf("env->middle = |%d ****env->middle_position = |%d \nkey = |%d ****key_position = |%d\n",env->middle, env->middle_position, env->size_stk_b, env->max_key_position);
 
 		if (env->max_key_position < env->middle_position)
 		{
-			m = env->size_stk_b - env->max_key_position + 1;
-			while (m--)
-				rrb(*stk);
-			pa(*stk);	
+			m = env->max_key_position;
+			while (m != 0)
+			{
+				rb(*stk);
+				m--;
+			}
+			pa(*stk);
 		}
 		else if (env->max_key_position >= env->middle_position)
 		{
-			m = env->max_key_position;
-			while (m--)
-				rb(*stk);
-			pa(*stk);
+			m = env->size_stk_b - env->max_key_position + 1;
+			while (m != 0)
+			{
+				rrb(*stk);
+				m--;
+			}
+			pa(*stk);	
 		}
+		env->size_stk_b--;
+		// ps_print((*stk)->b);
+		// p_print((*stk)->a);
+
 	}
+	// printf("Stack a\n");
 	// ps_print((*stk)->a);
 
 	// printf("%d--%d\n", env->middle, 50);
