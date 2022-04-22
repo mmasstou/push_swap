@@ -10,24 +10,7 @@ void	p_print(t_ps *stk_a)
 	printf("\n");
 	while (stk_a_temp != NULL)
 	{
-		// printf("%s%d%s\n",_RED,stk_a_temp->key,_END);
-
 		printf("%s[%d] index [%d]%s\n",_YELLOW,stk_a_temp->data,stk_a_temp->key, _END);
-
-		// if (stk_a_temp->prev == NULL && stk_a_temp->next != NULL)
-		// {
-		// 	printf("prev = NULL\n%s +> data = %d%s\n%s +> key = %d%s\nnext = %d\n-------------------------\n",_RED, stk_a_temp->data,_END,_YELLOW, stk_a_temp->key,_END, stk_a_temp->next->data);
-		// }
-		// else if (stk_a_temp->next == NULL && stk_a_temp->prev != NULL)
-		// {
-		// 	printf("prev = %d\n%s +> data = %d%s\n%s +> key = %d%s\nnext = NULL\n-------------------------\n", stk_a_temp->prev->data,_RED, stk_a_temp->data,_END,_YELLOW, stk_a_temp->key,_END);
-		// }
-		// else if (stk_a_temp->next == NULL && stk_a_temp->prev == NULL)
-		// {
-		// 	printf("prev = NULL\n%s +> data = %d%s\n%s +> key = %d%s\nnext = NULL\n-------------------------\n",_RED, stk_a_temp->data,_END,_YELLOW, stk_a_temp->key,_END);
-		// }
-		// else	
-		// 	printf("prev = %d\n%s +> data = %d%s\n%s +> key = %d%s\nnext = %d\n-------------------------\n", stk_a_temp->prev->data,_RED, stk_a_temp->data,_END,_YELLOW, stk_a_temp->key,_END, stk_a_temp->next->data);
 		stk_a_temp = stk_a_temp->next;
 	}
 }
@@ -189,70 +172,6 @@ t_env	*create_env(int argc)
 	return (env);
 }
 
-// void	ps_sorte_else(t_stk **stk, int argc)
-// {
-// 	t_ps	*temp;
-// 	t_ps	*tempb;
-// 	t_env	*env;
-// 	int		index;
-
-
-// 	// ps_print((*stk)->a);
-// 	env = create_env(argc);
-// 	// temp = (*stk)->a;
-// 	temp = (*stk)->a;
-// 	tempb = (*stk)->b;
-// 	index = dll_size(temp);
-// 	while (index != 0)
-// 	{
-// 		printf("size +++++++++++++++++++++++%d\n", index);
-// 		if (temp->key < env->s_index)
-// 		{
-// 			pb(*stk);
-// 			rb(*stk);
-// 			env->s_index++;
-// 			index--;
-// 		}
-// 		else if (temp->key <= (env->s_index + env->e_index))
-// 		{
-// 			pb(*stk);
-// 			index--;
-// 			env->s_index++;
-// 		}
-// 		else
-// 			ra(*stk);
-// 		// if (dll_size(tempb) > 1)
-// 		// {
-// 		// 	if (tempb->key < tempb->next->key)
-// 		// 		sb(*stk);
-// 		// }
-// 			// temp = temp->next;
-// 	}
-// 	ps_print((*stk)->b);
-// 	env->middle = get_middle((*stk)->b);
-// 	env->size_stk_b = dll_size((*stk)->b);
-// 	// env->key_position = -1;
-// 	env->key_position = 1;
-// 	// printf("%d--%d\n", env->middle, env->size_stk_b);
-// 	while (dll_size((*stk)->b) != 0)
-// 	{
-// 		temp = (*stk)->b;
-// 		while (temp->key != env->middle)
-// 		{
-// 			if ((temp->key - 1) == env->size_stk_b)
-// 			{
-// 				break;
-// 			}
-// 			env->key_position++;
-// 			temp = temp->next;
-// 		}
-// 		if (env->key_position != 1)
-// 			break;
-// 	}
-// 	printf("%d--%d --- %d\n", env->middle, env->size_stk_b, env->key_position);
-// 	ps_error("SATAC B");
-
-// }
 int	find_position_key(t_ps  *stk, int key)
 {
 	int	pos;
@@ -282,6 +201,7 @@ void	ps_sorte_else(t_stk **stk, int argc)
 	// ps_print((*stk)->a);
 	env = create_env(argc);
 	// temp = (*stk)->a;
+	env->size_stk_a = dll_size((*stk)->a) - 1;
 	while (dll_size((*stk)->a) != 0)
 	{
 		temp = (*stk)->a;
@@ -323,7 +243,6 @@ void	ps_sorte_else(t_stk **stk, int argc)
 		env->middle_position = find_position_key((*stk)->b, env->middle);
 		env->max_key_position = find_position_key((*stk)->b, env->size_stk_b);
 		// printf("env->middle = |%d ****env->middle_position = |%d \nkey = |%d ****key_position = |%d\n",env->middle, env->middle_position, env->size_stk_b, env->max_key_position);
-
 		if (env->max_key_position <= env->middle_position)
 		{
 			m = env->max_key_position;
@@ -347,30 +266,7 @@ void	ps_sorte_else(t_stk **stk, int argc)
 		env->size_stk_b--;
 		// ps_print((*stk)->b);
 		// p_print((*stk)->a);
-
 	}
-	// printf("Stack a\n");
-	// ps_print((*stk)->a);
-
-	// printf("%d--%d\n", env->middle, 50);
-	// while (dll_size((*stk)->b) != 0)
-	// {
-	// 	temp = (*stk)->b;
-	// 	while (temp->key != env->middle)
-	// 	{
-	// 		if ((temp->key - 1) == env->size_stk_b)
-	// 		{
-	// 			break;
-	// 		}
-	// 		env->key_position++;
-	// 		temp = temp->next;
-	// 	}
-	// 	if (env->key_position != 1)
-	// 		break;
-	// }
-	// printf("%d--%d --- %d\n", env->middle, env->size_stk_b, env->max_key_position);
-	// ps_error("SATAC B");
-
 }
 
 void	ps_sorte(t_stk **stk, int argc)
@@ -387,8 +283,6 @@ void	ps_sorte(t_stk **stk, int argc)
 			ps_sorte_five(stk);
 		else
 			ps_sorte_else(stk, argc);
-		// if (is_sorted((*stk)->a))
-		// 	exit(0);
 	}
 	else
 		exit(0);
