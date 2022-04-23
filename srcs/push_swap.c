@@ -48,7 +48,7 @@ int	main(int argc, char *argv[])
 	char		**args;
 
 	if (argc <= 1)
-		ps_error("Error : No Args !");
+		exit(1);
 	stk = malloc(sizeof(t_stk));
 	if (!stk)
 		return (1);

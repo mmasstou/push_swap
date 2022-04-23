@@ -8,6 +8,7 @@
 # include "../libft/libft.h"
 # include "ps_colors.h"
 # include "../linked_list/DLL.h"
+# include "../get_next_line/get_next_line.h"
 
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
@@ -54,5 +55,7 @@ int		get_index_of_min_value(t_ps *stack);
 int		position_of_key(t_ps *stack, int index);
 void	ps_print(t_ps *stk_a);
 int		get_middle(t_ps *stack);
+int		is_sorted(t_ps *stk);
+// checker
 
 #endif

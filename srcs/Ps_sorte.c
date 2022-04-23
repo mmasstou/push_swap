@@ -14,25 +14,6 @@ void	p_print(t_ps *stk_a)
 		stk_a_temp = stk_a_temp->next;
 	}
 }
-int		is_sorted(t_ps *stk)
-{
-	t_ps *temp;
-	int		index;
-
-	temp = stk;
-	index = 0;
-	while (temp)
-	{
-		if (temp->key == index)
-		{
-			index++;
-			temp = temp->next;
-		}
-		else
-			return (0);
-	}
-	return (1);
-}
 
 void	ps_sorte_tow(t_stk **stk)
 {
