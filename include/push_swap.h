@@ -67,5 +67,7 @@ void	ps_sorte_five(t_stk **stk);
 void	ps_sorte_big_nbrs(t_stk **stk, int argc);
 t_env	*create_env(int argc);
 // checker
-
-#endif
+int		check_instruction(char *inst);
+void	exicute_instraction(t_stk **stk, char *instraction);
+void	manage_instructions(t_stk **stk);
+#endif 

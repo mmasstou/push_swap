@@ -19,49 +19,32 @@ void	p_print(t_ps *stk_a)
 
 void	ps_sorte_big_nbrs(t_stk **stk, int argc)
 {
-	t_ps	*temp;
 	t_env	*env;
 	int		m;
-	// int	pos;
 
-
-
-	// ps_print((*stk)->a);
 	env = create_env(argc);
-	// temp = (*stk)->a;
 	env->size_stk_a = sll_lstsize((*stk)->a) - 1;
 	while (sll_lstsize((*stk)->a) != 0)
 	{
-		temp = (*stk)->a;
-		while (temp != NULL)
+		if ((*stk)->a->key <= env->s_index)
 		{
-			if (temp->key <= env->s_index)
-			{
-				pb(*stk, P_YES);
-				rb(*stk, P_YES);
-				env->s_index++;
-			}
-			else if (temp->key <= (env->s_index + env->e_index))
-			{
-				pb(*stk, P_YES);
-				env->s_index++;
-			}
-			else
-				ra(*stk, P_YES);
-			temp = temp->next;
+			pb(*stk, P_YES);
+			rb(*stk, P_YES);
+			env->s_index++;
 		}
+		else if ((*stk)->a->key <= (env->s_index + env->e_index))
+		{
+			pb(*stk, P_YES);
+			env->s_index++;
+		}
+		else
+			ra(*stk, P_YES); 
 		if (sll_lstsize((*stk)->b) > 1)
 		{
 			if ((*stk)->b->key < (*stk)->b->next->key)
 				sb(*stk, P_YES);
 		}
 	}
-	// printf("Stack b\n");
-
-	// ps_print((*stk)->b);
-	// ps_print((*stk)->a);
-	temp = (*stk)->b;
-	// env->size_stk_b = sll_lstsize((*stk)->b);
 	env->size_stk_b = sll_lstsize((*stk)->b) - 1;
 	while (env->size_stk_b >= 0)
 	{
@@ -70,7 +53,6 @@ void	ps_sorte_big_nbrs(t_stk **stk, int argc)
 			break;
 		env->middle_position = find_position_key((*stk)->b, env->middle);
 		env->max_key_position = find_position_key((*stk)->b, env->size_stk_b);
-		// printf("env->middle = |%d ****env->middle_position = |%d \nkey = |%d ****key_position = |%d\n",env->middle, env->middle_position, env->size_stk_b, env->max_key_position);
 		if (env->max_key_position <= env->middle_position)
 		{
 			m = env->max_key_position;
@@ -92,7 +74,5 @@ void	ps_sorte_big_nbrs(t_stk **stk, int argc)
 			pa(*stk, P_YES);	
 		}
 		env->size_stk_b--;
-		// ps_print((*stk)->b);
-		// p_print((*stk)->a);
 	}
 }

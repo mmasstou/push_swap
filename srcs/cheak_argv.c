@@ -10,13 +10,13 @@ char	**cheak_args(int argc, char *arg[])
 	j = 2;
 	str = ft_strtrim(arg[1], " ");
 	if (!arg[1] || str[0] == '\0')
-		ps_error("Error : Emty Args");
+		ps_error("Error");
 	tab = ft_strjoin(arg[1], " ");
 	while (j < argc)
 	{
 		str = ft_strtrim(arg[j], " ");
 		if (str[0] == '\0' || str[0] == '/')
-			ps_error("Error : Args Error !");
+			ps_error("Error");
 		tab = ft_strrejion(tab, " ");
 		tab = ft_strrejion(tab, str);
 		j++;
@@ -27,7 +27,7 @@ char	**cheak_args(int argc, char *arg[])
 	{
 		cheack_double_value((const char **)args, ft_atoi(args[j]), j);
 		if (args[j][0] == '\0' || ps_isdigit(args[j]) == 0)
-			ps_error("Error :not A NUmber");
+			ps_error("Error");
 		j++;
 	}
 	return (args);

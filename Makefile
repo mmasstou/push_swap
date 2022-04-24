@@ -14,9 +14,11 @@ INSTR_SRC		= $(INSTR)/INSTRswap.c $(INSTR)/INSTRrotate.c  $(INSTR)/INSTRrotate_r
 
 SRCS			=  srcs/cheak_argv.c srcs/ps_errors.c srcs/ps_isdigit.c srcs/manage_args.c srcs/PsIndexing.c srcs/PsDoubleValue.c srcs/Ps_sorte.c srcs/Ps_getIndexOfMinValue.c srcs/Ps_positionOfKey.c srcs/ps_print.c srcs/getMiddle.c srcs/Ps_sorte_tow.c srcs/Ps_sorte_three.c srcs/Ps_sorte_four.c srcs/Ps_sorte_five.c srcs/find_position_key.c srcs/Ps_sorte_big_nbrs.c srcs/create_env.c srcs/is_sorted.c 
 
+BONUS_SRC = srcs/check_instruction_bonus.c  srcs/exicute_instraction_bonus.c srcs/manage_instructions_bonus.c
 GET_NEXT_SRC	= get_next_line/get_next_line.c  get_next_line/get_next_line_utils.c
 
 OBJS			= $(SRCS:.c=.o)
+BONUS_OBJS			= $(BONUS_SRC:.c=.o)
 # DLL_ObJ			= $(DLL_SRC:.c=.o)
 SLL_ObJ			= $(SLL_SRC:.c=.o)
 INSTR_OBJ		= $(INSTR_SRC:.c=.o)
@@ -42,7 +44,7 @@ _libft :
 	@make bonus -C $(LIBFT_DIR)
 	@cp $(LIBFT_DIR)$(LIBFT_NAME) .
 
-bonus : $(GET_NEXT_OBJ) _libft
+bonus : $(GET_NEXT_OBJ) _libft $(BONUS_OBJS)
 	$(CC) $(CFLAGS) $(SRCS) $(SLL_SRC) $(INSTR_SRC) srcs/checker.c $(LIBFT_NAME) $(GET_NEXT_SRC) -o $(BONUSNAME) -g
 
 push:fclean

@@ -72,10 +72,10 @@ int	main(int argc, char *argv[])
 	stk->b = NULL;
 	args = cheak_args(argc, argv);
 	stk->a = manage_args(args);
-	ps_indexing(&stk->a);
 	// ps_ssg(&stk->a);
+	ps_indexing(&stk->a);
+	// ps_print(stk->a);
 	// stk_a_temp = stk->a;
-	// ps_print(stk_a_temp);
 	ps_sorte(&stk, sizing_stack(args));
 	// p_fggprint(stk->a);
 	return (0);
