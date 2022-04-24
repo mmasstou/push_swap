@@ -8,7 +8,7 @@ void	p_print(t_ps *stk_a)
 	printf("\n");
 	while (stk_a_temp != NULL)
 	{
-		printf("%s[%d] index [%d]%s\n",_YELLOW,stk_a_temp->content,stk_a_temp->key, _END);
+		printf("[%d] index [%d]\n",stk_a_temp->content,stk_a_temp->key);
 		stk_a_temp = stk_a_temp->next;
 	}
 }
@@ -20,34 +20,34 @@ int main()
 	t_ps *temp1;
 
 	head = NULL;
-	// head = ft_lstnew(1996, 1);
-	// ft_lstadd_back(&head, ft_lstnew(4242, 2));
-	// ft_lstadd_front(&head, ft_lstnew(42, 0));
-	// ft_lstadd_back(&head, ft_lstnew(1337, 3));
+	// head = sll_lstnew(1996, 1);
+	// sll_lstadd_back(&head, sll_lstnew(4242, 2));
+	// sll_lstadd_front(&head, sll_lstnew(42, 0));
+	// sll_lstadd_back(&head, sll_lstnew(1337, 3));
 	temp = head;
 	printf("** Head **\n");
-	printf("Size :%d", ft_lstsize(head));
+	printf("Size :%d", sll_lstsize(head));
 	p_print(head);
-	// ft_lstdelone(&temp, DLL_LAST);
+	// sll_lstdelone(&temp, DLL_LAST);
 	// printf("** temp **\n");
-	// printf("Size :%d", ft_lstsize(temp));
+	// printf("Size :%d", sll_lstsize(temp));
 	// p_print(temp);
 
-	// ft_lstdelone(&temp, DLL_FIRST);
+	// sll_lstdelone(&temp, DLL_FIRST);
 	// printf("** temph **\n");
-	// printf("Size :%d", ft_lstsize(temp));
+	// printf("Size :%d", sll_lstsize(temp));
 	// p_print(temp);
-	ft_reverse(&temp);
+	sll_reverse(&temp);
 	printf("** reverse **\n");
-	printf("Size :%d", ft_lstsize(temp));
+	printf("Size :%d", sll_lstsize(temp));
 	p_print(temp);
 
-	ft_re_reverse(&temp);
+	sll_re_reverse(&temp);
 	printf("**re reverse **\n");
-	printf("Size :%d", ft_lstsize(temp));
+	printf("Size :%d", sll_lstsize(temp));
 	p_print(temp);
 	sll_swap(&temp);
 	printf("**swap **\n");
-	printf("Size :%d", ft_lstsize(temp));
+	printf("Size :%d", sll_lstsize(temp));
 	p_print(temp);
 }

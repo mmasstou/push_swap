@@ -8,20 +8,20 @@ void	ps_sorte_three(t_stk **stk)
 	if (!is_sorted((*stk)->a))
 	{
 		if ((temp->key > temp->next->key) && (temp->key < temp->next->next->key))
-			sa(*stk);
+			sa(*stk, P_YES);
 		else if ((temp->key > temp->next->key) && (temp->key > temp->next->next->key) && (temp->next->key > temp->next->next->key))
 		{
-			sa(*stk);
-			rra(*stk);
+			sa(*stk, P_YES);
+			rra(*stk, P_YES);
 		}
 		else if ((temp->key > temp->next->key) && (temp->next->key < temp->next->next->key))
-			ra(*stk);
+			ra(*stk, P_YES);
 		else if ((temp->key < temp->next->key) && (temp->key < temp->next->next->key) &&(temp->next->key > temp->next->next->key))
 		{
-			sa(*stk);
-			ra(*stk);
+			sa(*stk, P_YES);
+			ra(*stk, P_YES);
 		}
 		else if ((temp->key < temp->next->key) && (temp->key > temp->next->next->key) && (temp->next->key > temp->next->next->key))
-			rra(*stk);
+			rra(*stk, P_YES);
 	}
 }

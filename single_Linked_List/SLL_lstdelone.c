@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PsIndexing.c                                       :+:      :+:    :+:   */
+/*   SLL_lstdelone.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 22:48:24 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/24 06:06:56 by mmasstou         ###   ########.fr       */
+/*   Created: 2021/11/15 13:31:11 by mmasstou          #+#    #+#             */
+/*   Updated: 2022/04/24 05:57:44 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "linked_list.h"
 
-void	ps_indexing(t_ps **stack)
+void	sll_lstdelone(t_ps	**lst, char pos)
 {
-	t_ps	*current;
 	t_ps	*temp;
-	int		i;
-
-	current = *stack;
-	while (current != NULL)
+	t_ps	*last;
+	
+	if (sll_lstsize(*lst) > 0)
 	{
-		i = 0;
-		temp = *stack;
-		while (temp != NULL)
+		if ((*lst)->next == NULL)
+			*lst = NULL;
+		else 
 		{
-			if (current->data > temp->data)
-				i++;
-			temp = temp->next;
+			if (pos == DLL_FIRST)
+			{
+				temp = (*lst)->next;
+				*lst = temp;
+			}
+			if (pos == DLL_LAST)
+			{
+				temp = *lst;
+				while(temp->next->next != NULL)
+        			temp = temp->next;
+				last = temp->next;
+				temp->next = NULL;
+			}
+			
 		}
-		current->key = i;
-		current = current->next;
 	}
 }

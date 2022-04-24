@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PsIndexing.c                                       :+:      :+:    :+:   */
+/*   sll_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 22:48:24 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/24 06:06:56 by mmasstou         ###   ########.fr       */
+/*   Created: 2021/11/14 12:29:03 by mmasstou          #+#    #+#             */
+/*   Updated: 2022/04/24 00:55:33 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "linked_list.h"
 
-void	ps_indexing(t_ps **stack)
+t_ps	*sll_lstlast(t_ps *lst)
 {
-	t_ps	*current;
-	t_ps	*temp;
-	int		i;
-
-	current = *stack;
-	while (current != NULL)
+	if (lst == NULL)
+		return (0);
+	while (lst)
 	{
-		i = 0;
-		temp = *stack;
-		while (temp != NULL)
-		{
-			if (current->data > temp->data)
-				i++;
-			temp = temp->next;
-		}
-		current->key = i;
-		current = current->next;
+		if (lst->next == NULL)
+			return (lst);
+		lst = lst->next;
 	}
+	return (lst);
 }

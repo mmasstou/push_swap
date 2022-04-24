@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PsIndexing.c                                       :+:      :+:    :+:   */
+/*   sll_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 22:48:24 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/24 06:06:56 by mmasstou         ###   ########.fr       */
+/*   Created: 2021/11/14 10:42:14 by mmasstou          #+#    #+#             */
+/*   Updated: 2022/04/23 23:33:09 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "linked_list.h"
 
-void	ps_indexing(t_ps **stack)
+t_ps	*sll_lstnew(int content, int key)
 {
-	t_ps	*current;
-	t_ps	*temp;
-	int		i;
+	t_ps	*newelement;
 
-	current = *stack;
-	while (current != NULL)
-	{
-		i = 0;
-		temp = *stack;
-		while (temp != NULL)
-		{
-			if (current->data > temp->data)
-				i++;
-			temp = temp->next;
-		}
-		current->key = i;
-		current = current->next;
-	}
+	newelement = (t_ps *)malloc(sizeof(t_ps));
+	if (!newelement)
+		return (NULL);
+	newelement->data = content;
+	newelement->key = key;
+	newelement->next = NULL;
+	return (newelement);
 }

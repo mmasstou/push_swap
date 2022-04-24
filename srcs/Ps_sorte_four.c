@@ -9,31 +9,31 @@ void	ps_sorte_four(t_stk **stk)
 	pos = position_of_key((*stk)->a, index);
 	if (pos == 1)
 	{
-		pb(*stk);
+		pb(*stk, P_YES);
 		ps_sorte_three(stk);
-		pa(*stk);
+		pa(*stk, P_YES);
 	}
 	if (pos == 2)
 	{
-		sa(*stk);
-		pb(*stk);
+		sa(*stk, P_YES);
+		pb(*stk, P_YES);
 		ps_sorte_three(stk);
-		pa(*stk);
+		pa(*stk, P_YES);
 	}
 	else if (pos == 3)
 	{
-		ra(*stk);
-		sa(*stk);
-		pb(*stk);
+		ra(*stk, P_YES);
+		sa(*stk, P_YES);
+		pb(*stk, P_YES);
 		ps_sorte_three(stk);
-		pa(*stk);
+		pa(*stk, P_YES);
 	}
 	else if (pos == 4)
 	{
-		rra(*stk);
-		pb(*stk);
+		rra(*stk, P_YES);
+		pb(*stk, P_YES);
 		ps_sorte_three(stk);
-		pa(*stk);
+		pa(*stk, P_YES);
 	}
 	
 }
