@@ -11,7 +11,7 @@ DLL_SRC			= $(DLL_DIR)/DLL_findEnd.c $(DLL_DIR)/DLL_rotate.c $(DLL_DIR)/DLL_addB
 
 INSTR_SRC		= $(INSTR)/INSTRswap.c $(INSTR)/INSTRrotate.c  $(INSTR)/INSTRrotate_reverse.c $(INSTR)/INSTRpush.c  
 
-SRCS			= srcs/push_swap.c  srcs/cheak_argv.c srcs/ps_errors.c srcs/ps_isdigit.c srcs/manage_args.c srcs/PsIndexing.c srcs/PsDoubleValue.c srcs/Ps_sorte.c srcs/Ps_getIndexOfMinValue.c srcs/Ps_positionOfKey.c srcs/ps_print.c srcs/getMiddle.c
+SRCS			= srcs/push_swap.c  srcs/cheak_argv.c srcs/ps_errors.c srcs/ps_isdigit.c srcs/manage_args.c srcs/PsIndexing.c srcs/PsDoubleValue.c srcs/Ps_sorte.c srcs/Ps_getIndexOfMinValue.c srcs/Ps_positionOfKey.c srcs/ps_print.c srcs/getMiddle.c srcs/Ps_sorte_tow.c srcs/Ps_sorte_three.c srcs/Ps_sorte_four.c srcs/Ps_sorte_five.c srcs/find_position_key.c srcs/Ps_sorte_big_nbrs.c srcs/create_env.c srcs/is_sorted.c
 
 GET_NEXT_SRC	= get_next_line/get_next_line.c  get_next_line/get_next_line_utils.c
 
@@ -42,6 +42,7 @@ _libft :
 
 bonus : $(GET_NEXT_OBJ)
 	$(CC) $(CFLAGS) $(SRCS) $(DLL_SRC) $(INSTR_SRC) $(LIBFT_NAME) $(GET_NEXT_SRC) -o $(BONUSNAME) -g
+
 push:fclean
 	@git status
 	@read -p "Files To Add:" files; git add "$$files" 

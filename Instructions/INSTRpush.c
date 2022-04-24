@@ -7,7 +7,6 @@ void	pa(t_stk *stk)
 	if (stk->b == NULL)
 		return;
 	temp = dll_addnew(stk->b->data, stk->b->key);
-	dll_addfront(&(stk->a), temp->data, temp->key);
 	dll_delone(&(stk->b), DLL_FIRST);
 	ft_putendl_fd("pa",1);
 }

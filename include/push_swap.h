@@ -56,6 +56,13 @@ int		position_of_key(t_ps *stack, int index);
 void	ps_print(t_ps *stk_a);
 int		get_middle(t_ps *stack);
 int		is_sorted(t_ps *stk);
+int		find_position_key(t_ps  *stk, int key);
+void	ps_sorte_tow(t_stk **stk);
+void	ps_sorte_three(t_stk **stk);
+void	ps_sorte_four(t_stk **stk);
+void	ps_sorte_five(t_stk **stk);
+void	ps_sorte_big_nbrs(t_stk **stk, int argc);
+t_env	*create_env(int argc);
 // checker
 
 #endif
