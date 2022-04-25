@@ -15,7 +15,7 @@
 void	sll_lstdelone(t_ps	**lst, char pos)
 {
 	t_ps	*temp;
-	t_ps	*last;
+	// t_ps	*last;
 	
 	if (sll_lstsize(*lst) > 0)
 	{
@@ -33,7 +33,7 @@ void	sll_lstdelone(t_ps	**lst, char pos)
 				temp = *lst;
 				while(temp->next->next != NULL)
         			temp = temp->next;
-				last = temp->next;
+				// last = temp->next;
 				temp->next = NULL;
 			}
 			

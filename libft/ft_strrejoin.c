@@ -1,6 +1,6 @@
 #include "libft.h"
 
-char	*ft_strrejion(char *str1, char *str2)
+char	*ft_strrejoin(char *str1, char *str2)
 {
 	char *str;
 

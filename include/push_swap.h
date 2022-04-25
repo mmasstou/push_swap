@@ -31,8 +31,11 @@ typedef struct env
 	int	size_stk_a;
 	int	size_stk_b;
 	int	max_key_position;
-
+	int	k;
+	int	nk;
+	int	nnk;
 } 	t_env;
+
 
 // Instructions
 void	sa(t_stk *stk, int print_option);

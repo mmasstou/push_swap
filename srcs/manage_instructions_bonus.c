@@ -1,5 +1,9 @@
 #include "../include/push_swap.h"
-
+static void	print_result(char *result)
+{
+	ft_putendl_fd(result, 1);
+	exit(0);
+}
 void	manage_instructions(t_stk **stk)
 {
 	char	*buffer;
@@ -18,15 +22,8 @@ void	manage_instructions(t_stk **stk)
 	}
 	stack = (*stk)->a;
 	ps_indexing(&stack);
-	stack = (*stk)->a;
-	if (is_sorted(stack) && size == sll_lstsize(stack))
-	{
-		ft_putendl_fd("OK", 1);
-		exit(0);
-	}
+	if (is_sorted((*stk)->a) && size == sll_lstsize((*stk)->a))
+		print_result("OK");
 	else
-	{
-		ft_putendl_fd("KO", 1);
-		exit(1);
-	}
+		print_result("KO");
 }

@@ -34,7 +34,7 @@ int		ft_isascii(int i);
 int		ft_isdigit(int d);
 int		ft_isprint(int p);
 int		ft_is_in(char c, char *str);
-char	*ft_strrejion(char *str1, char *str2);
+char	*ft_strrejoin(char *str1, char *str2);
 void	ft_swap(int *x, int *y);
 // ft_str
 size_t	ft_strlcat(char *dest, const char *src, size_t size);

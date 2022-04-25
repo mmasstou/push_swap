@@ -1,5 +1,16 @@
 #include "../include/push_swap.h"
+// static void	args_join(char *tab, char *arg[], int *j)
+// {
+// 	char	*str;
+	
 
+// 	str = ft_strtrim(arg[*j], " ");
+// 	if (str[0] == '\0' || str[0] == '/')
+// 		ps_error("Error");
+// 	tab = ft_strrejoin(tab, " ");
+// 	tab = ft_strrejoin(tab, str);
+// 	(*j)++;
+// }
 char	**cheak_args(int argc, char *arg[])
 {
 	int		j;
@@ -17,10 +28,11 @@ char	**cheak_args(int argc, char *arg[])
 		str = ft_strtrim(arg[j], " ");
 		if (str[0] == '\0' || str[0] == '/')
 			ps_error("Error");
-		tab = ft_strrejion(tab, " ");
-		tab = ft_strrejion(tab, str);
+		tab = ft_strrejoin(tab, " ");
+		tab = ft_strrejoin(tab, str);
 		j++;
 	}
+		// args_join(tab, arg, &j)
 	args = ft_split(tab, ' ');
 	j = 0;
 	while (args[j])

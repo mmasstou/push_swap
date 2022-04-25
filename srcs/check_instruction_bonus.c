@@ -3,9 +3,7 @@
 static char	**get_instration(void)
 {
 	char	**tab;
-	int		index;
 
-	index = 1;
 	tab = (char **)malloc(sizeof(char *) * 12);
 	if (!tab)
 		ps_error("Erorr");

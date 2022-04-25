@@ -1,8 +1,13 @@
 #include "../include/push_swap.h"
 
-static void	cheak_max_min(long *nbr, char c)
+static void	cheak_max_min(long *nbr, char str, int *i)
 {	
-	*nbr  = (*nbr) * 10 + c - 48;
+	if (!ft_isdigit(str))
+		ps_error("Error");
+	*nbr  = (*nbr) * 10 + str - 48;
+	if (*nbr < INT_MIN || *nbr > INT_MAX)
+		ps_error("Error");
+	(*i)++;
 }
 
 int	ps_isdigit(char	*str)
@@ -24,13 +29,6 @@ int	ps_isdigit(char	*str)
 	}
 	result *= signe;
 	while(str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (0);
-		cheak_max_min(&result, str[i]);
-		if (result < INT_MIN || result > INT_MAX)
-			ps_error("Error");
-		i++;
-	}
+		cheak_max_min(&result, str[i], &i);
 	return (1);
 }
