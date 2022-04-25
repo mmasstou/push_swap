@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   INSTRswap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/25 20:24:31 by mmasstou          #+#    #+#             */
+/*   Updated: 2022/04/25 20:27:08 by mmasstou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 void	sa(t_stk *stk, int print_option)
@@ -6,7 +18,7 @@ void	sa(t_stk *stk, int print_option)
 		return ;
 	sll_swap(&stk->a);
 	if (print_option == P_YES)
-		ft_putendl_fd("sa",1);
+		ft_putendl_fd("sa", 1);
 }
 
 void	sb(t_stk *stk, int print_option)
@@ -15,7 +27,7 @@ void	sb(t_stk *stk, int print_option)
 		return ;
 	sll_swap(&stk->b);
 	if (print_option == P_YES)
-		ft_putendl_fd("sb",1);
+		ft_putendl_fd("sb", 1);
 }
 
 void	ss(t_stk *stk, int print_option)
@@ -27,5 +39,5 @@ void	ss(t_stk *stk, int print_option)
 	sll_swap(&stk->a);
 	sll_swap(&stk->b);
 	if (print_option == P_YES)
-		ft_putendl_fd("ss",1);
+		ft_putendl_fd("ss", 1);
 }

@@ -6,7 +6,7 @@
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 13:31:11 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/24 05:57:44 by mmasstou         ###   ########.fr       */
+/*   Updated: 2022/04/25 22:04:39 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 void	sll_lstdelone(t_ps	**lst, char pos)
 {
 	t_ps	*temp;
-	// t_ps	*last;
-	
+
 	if (sll_lstsize(*lst) > 0)
 	{
 		if ((*lst)->next == NULL)
 			*lst = NULL;
-		else 
+		else
 		{
 			if (pos == DLL_FIRST)
 			{
@@ -31,12 +30,10 @@ void	sll_lstdelone(t_ps	**lst, char pos)
 			if (pos == DLL_LAST)
 			{
 				temp = *lst;
-				while(temp->next->next != NULL)
-        			temp = temp->next;
-				// last = temp->next;
+				while (temp->next->next != NULL)
+					temp = temp->next;
 				temp->next = NULL;
 			}
-			
 		}
 	}
 }

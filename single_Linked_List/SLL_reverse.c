@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   SLL_reverse.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/25 22:05:50 by mmasstou          #+#    #+#             */
+/*   Updated: 2022/04/25 22:07:20 by mmasstou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "linked_list.h"
 
 void	sll_retate(t_ps **head)
 {
-	// dell first
-	t_ps *temp;
+	t_ps	*temp;
 
 	temp = *head;
 	if (sll_lstsize(temp) <= 1)
@@ -15,9 +26,8 @@ void	sll_retate(t_ps **head)
 
 void	sll_retate_reverse(t_ps **head)
 {
-	// dell last
-	t_ps *temp;
-	t_ps *last;
+	t_ps	*temp;
+	t_ps	*last;
 
 	if (sll_lstsize(*head) <= 1)
 		return ;
@@ -28,4 +38,3 @@ void	sll_retate_reverse(t_ps **head)
 	last->next = NULL;
 	sll_lstadd_front(head, temp);
 }
-
