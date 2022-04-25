@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ps_errors.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/25 19:09:14 by mmasstou          #+#    #+#             */
+/*   Updated: 2022/04/25 20:16:56 by mmasstou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 void	ps_error(char *msg)
 {
-	ft_printf("%s%s%s%s\n",_RED,_BOLD, msg, _END);
+	ft_printf("%s%s%s%s\n", _RED, _BOLD, msg, _END);
 	exit(1);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_instruction_bonus.c                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/25 18:40:59 by mmasstou          #+#    #+#             */
+/*   Updated: 2022/04/25 18:41:59 by mmasstou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 static char	**get_instration(void)
@@ -21,6 +33,7 @@ static char	**get_instration(void)
 	tab[11] = NULL;
 	return (tab);
 }
+
 int	check_instruction(char *inst)
 {
 	char	**instractions;

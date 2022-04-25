@@ -1,9 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   manage_instructions_bonus.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/25 19:09:09 by mmasstou          #+#    #+#             */
+/*   Updated: 2022/04/25 20:16:27 by mmasstou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
+
 static void	print_result(char *result)
 {
 	ft_putendl_fd(result, 1);
 	exit(0);
 }
+
 void	manage_instructions(t_stk **stk)
 {
 	char	*buffer;

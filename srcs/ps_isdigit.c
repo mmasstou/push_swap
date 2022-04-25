@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ps_isdigit.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/25 19:09:20 by mmasstou          #+#    #+#             */
+/*   Updated: 2022/04/25 20:18:18 by mmasstou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 static void	cheak_max_min(long *nbr, char str, int *i)
 {	
 	if (!ft_isdigit(str))
 		ps_error("Error");
-	*nbr  = (*nbr) * 10 + str - 48;
+	*nbr = (*nbr) * 10 + str - 48;
 	if (*nbr < INT_MIN || *nbr > INT_MAX)
 		ps_error("Error");
 	(*i)++;
@@ -28,7 +40,7 @@ int	ps_isdigit(char	*str)
 		i++;
 	}
 	result *= signe;
-	while(str[i])
+	while (str[i])
 		cheak_max_min(&result, str[i], &i);
 	return (1);
 }

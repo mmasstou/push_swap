@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Ps_sorte_big_nbrs.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/25 19:09:31 by mmasstou          #+#    #+#             */
+/*   Updated: 2022/04/25 20:19:37 by mmasstou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/push_swap.h"
 
 static void	big_nbrs_pa(t_stk **stk, t_env	*env)
@@ -17,7 +29,7 @@ static void	big_nbrs_pa(t_stk **stk, t_env	*env)
 			env->s_index++;
 		}
 		else
-			ra(*stk, P_YES); 
+			ra(*stk, P_YES);
 		if (sll_lstsize((*stk)->b) > 1)
 		{
 			if ((*stk)->b->key < (*stk)->b->next->key)
@@ -63,7 +75,7 @@ void	ps_sorte_big_nbrs(t_stk **stk, int argc)
 	{
 		env->middle = get_middle((*stk)->b);
 		if (env->middle == -1)
-			break;
+			break ;
 		env->middle_position = find_position_key((*stk)->b, env->middle);
 		env->max_key_position = find_position_key((*stk)->b, env->size_stk_b);
 		if (env->max_key_position <= env->middle_position)
