@@ -6,7 +6,7 @@
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 19:09:51 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/25 20:18:57 by mmasstou         ###   ########.fr       */
+/*   Updated: 2022/04/26 06:02:45 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ps_sorte(t_stk **stk, int argc)
 {
+	(*stk)->b = NULL;
 	if (!is_sorted((*stk)->a))
 	{
 		if (argc == 2)
@@ -26,7 +27,6 @@ void	ps_sorte(t_stk **stk, int argc)
 			ps_sorte_five(stk);
 		else
 			ps_sorte_big_nbrs(stk, argc);
+		
 	}
-	else
-		exit(0);
 }

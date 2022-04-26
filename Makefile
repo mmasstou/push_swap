@@ -7,12 +7,12 @@ LIBFT_NAME		= libft.a
 DLL_DIR			= linked_list
 SLL_DIR			= single_Linked_List
 INSTR			= Instructions
-SLL_SRC			= $(SLL_DIR)/SLL_swap.c $(SLL_DIR)/SLL_reverse.c $(SLL_DIR)/SLL_lstsize.c $(SLL_DIR)/SLL_lstnew.c  $(SLL_DIR)/SLL_lstlast.c $(SLL_DIR)/SLL_lstdelone.c $(SLL_DIR)/SLL_lstadd_front.c $(SLL_DIR)/SLL_lstadd_back.c
+SLL_SRC			= $(SLL_DIR)/SLL_swap.c $(SLL_DIR)/SLL_reverse.c $(SLL_DIR)/SLL_lstsize.c $(SLL_DIR)/SLL_lstnew.c  $(SLL_DIR)/SLL_lstlast.c $(SLL_DIR)/SLL_lstdelone.c $(SLL_DIR)/SLL_lstadd_front.c $(SLL_DIR)/SLL_lstadd_back.c  $(SLL_DIR)/SLL_lstclear.c
 # DLL_SRC			= $(DLL_DIR)/DLL_findEnd.c $(DLL_DIR)/DLL_rotate.c $(DLL_DIR)/DLL_addBack.c $(DLL_DIR)/DLL_addFront.c $(DLL_DIR)/DLL_addnew.c $(DLL_DIR)/DLL_delOne.c $(DLL_DIR)/DLL_isEmty.c $(DLL_DIR)/DLL_print_frent.c $(DLL_DIR)/DLL_size.c $(DLL_DIR)/DLL_swap.c 
 
 INSTR_SRC		= $(INSTR)/INSTRswap.c $(INSTR)/INSTRrotate.c  $(INSTR)/INSTRrotate_reverse.c $(INSTR)/INSTRpush.c  
 
-SRCS			=  srcs/cheak_argv.c srcs/ps_errors.c srcs/ps_isdigit.c srcs/manage_args.c srcs/PsIndexing.c srcs/PsDoubleValue.c srcs/Ps_sorte.c srcs/Ps_getIndexOfMinValue.c srcs/Ps_positionOfKey.c srcs/ps_print.c srcs/getMiddle.c srcs/Ps_sorte_tow.c srcs/Ps_sorte_three.c srcs/Ps_sorte_four.c srcs/Ps_sorte_five.c srcs/find_position_key.c srcs/Ps_sorte_big_nbrs.c srcs/create_env.c srcs/is_sorted.c 
+SRCS			=  srcs/cheak_argv.c srcs/ps_errors.c srcs/ps_isdigit.c srcs/manage_args.c srcs/PsIndexing.c srcs/PsDoubleValue.c srcs/Ps_sorte.c srcs/Ps_getIndexOfMinValue.c srcs/Ps_positionOfKey.c  srcs/getMiddle.c srcs/Ps_sorte_tow.c srcs/Ps_sorte_three.c srcs/Ps_sorte_four.c srcs/Ps_sorte_five.c srcs/find_position_key.c srcs/Ps_sorte_big_nbrs.c srcs/create_env.c srcs/is_sorted.c 
 
 BONUS_SRC = srcs/checker.c srcs/check_instruction_bonus.c  srcs/exicute_instraction_bonus.c srcs/manage_instructions_bonus.c 
 GET_NEXT_SRC	= get_next_line/get_next_line.c  get_next_line/get_next_line_utils.c
@@ -55,7 +55,7 @@ push:fclean
 	git push origin master
 
 clean:
-	@rm -rf $(SLL_ObJ) $(INSTR_OBJ) $(OBJS)
+	@rm -rf $(SLL_ObJ) $(INSTR_OBJ) $(OBJS) $(BONUS_OBJS)
 	@make clean -C  $(LIBFT_DIR)
 
 fclean: clean

@@ -6,7 +6,7 @@
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 19:09:31 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/25 20:19:37 by mmasstou         ###   ########.fr       */
+/*   Updated: 2022/04/26 07:16:25 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static void	rrb_op(t_stk **stk, t_env	*env)
 	pa(*stk, P_YES);
 }
 
-static void	rb_op(t_stk **stk, t_env	*env)
+static void	rb_op(t_stk **stk, t_env *env)
 {
 	int	m;
 
@@ -84,4 +84,5 @@ void	ps_sorte_big_nbrs(t_stk **stk, int argc)
 			rrb_op(stk, env);
 		env->size_stk_b--;
 	}
+	free(env);
 }

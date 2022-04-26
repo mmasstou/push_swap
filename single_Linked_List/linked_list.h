@@ -6,7 +6,7 @@
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 22:00:07 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/25 22:00:57 by mmasstou         ###   ########.fr       */
+/*   Updated: 2022/04/26 04:53:01 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ void	sll_lstdelone(t_ps	**lst, char pos);
 void	sll_retate(t_ps **head);
 void	sll_retate_reverse(t_ps **head);
 void	sll_swap(t_ps **head);
+void	sll_lstclear(t_ps **lst);
 
 #endif

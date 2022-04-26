@@ -6,7 +6,7 @@
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 18:38:25 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/25 18:39:49 by mmasstou         ###   ########.fr       */
+/*   Updated: 2022/04/26 05:58:45 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,14 @@ static void	args_join(char **tab, char *arg[], int *j)
 		ps_error("Error");
 	*tab = ft_strrejoin(*tab, " ");
 	*tab = ft_strrejoin(*tab, str);
+	free(str);
 	(*j)++;
 }
 
 char	**cheak_args(int argc, char *arg[])
 {
 	int		j;
-	char	*tab;
+	char	*tabe;
 	char	*str;
 	char	**args;
 
@@ -35,10 +36,12 @@ char	**cheak_args(int argc, char *arg[])
 	str = ft_strtrim(arg[1], " ");
 	if (!arg[1] || str[0] == '\0')
 		ps_error("Error");
-	tab = ft_strjoin(arg[1], " ");
+	free(str);
+	tabe = ft_strjoin(arg[1], " ");
 	while (j < argc)
-		args_join(&tab, arg, &j);
-	args = ft_split(tab, ' ');
+		args_join(&tabe, arg, &j);
+	args = ft_split(tabe, ' ');
+	free(tabe);
 	j = -1;
 	while (args[++j])
 	{
