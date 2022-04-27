@@ -6,7 +6,7 @@
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 19:09:42 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/26 07:13:45 by mmasstou         ###   ########.fr       */
+/*   Updated: 2022/04/27 02:31:20 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	make_push(t_stk **stk)
 {
-	pb(*stk, P_YES);
+	pb(stk, P_YES);
 	ps_sorte_three(stk);
-	pa(*stk, P_YES);
+	pa(stk, P_YES);
 }
 
 void	ps_sorte_four(t_stk **stk)
@@ -30,17 +30,20 @@ void	ps_sorte_four(t_stk **stk)
 	else if (pos == 2)
 	{
 		sa(*stk, P_YES);
-		make_push(stk);
+		if (!is_sorted((*stk)->a))
+			make_push(stk);
 	}
 	else if (pos == 3)
 	{
 		ra(*stk, P_YES);
 		sa(*stk, P_YES);
-		make_push(stk);
+		if (!is_sorted((*stk)->a))
+			make_push(stk);
 	}
 	else if (pos == 4)
 	{
 		rra(*stk, P_YES);
-		make_push(stk);
+		if (!is_sorted((*stk)->a))
+			make_push(stk);
 	}	
 }

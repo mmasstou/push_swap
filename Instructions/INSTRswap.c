@@ -6,7 +6,7 @@
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 20:24:31 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/25 20:27:08 by mmasstou         ###   ########.fr       */
+/*   Updated: 2022/04/27 01:54:54 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,24 @@
 
 void	sa(t_stk *stk, int print_option)
 {
-	if (sll_lstsize(stk->a) <= 1)
-		return ;
-	sll_swap(&stk->a);
+	if (sll_lstsize(stk->a) > 1)
+		sll_swap(&stk->a);
 	if (print_option == P_YES)
 		ft_putendl_fd("sa", 1);
 }
 
 void	sb(t_stk *stk, int print_option)
 {
-	if (sll_lstsize(stk->b) <= 1)
-		return ;
-	sll_swap(&stk->b);
+	if (sll_lstsize(stk->b) > 1)
+		sll_swap(&stk->b);
 	if (print_option == P_YES)
 		ft_putendl_fd("sb", 1);
 }
 
 void	ss(t_stk *stk, int print_option)
 {
-	if (sll_lstsize(stk->a) <= 1)
-		return ;
-	if (sll_lstsize(stk->b) <= 1)
-		return ;
-	sll_swap(&stk->a);
-	sll_swap(&stk->b);
+	sa(stk, P_NO);
+	sb(stk, P_NO);
 	if (print_option == P_YES)
 		ft_putendl_fd("ss", 1);
 }

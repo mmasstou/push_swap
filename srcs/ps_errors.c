@@ -6,7 +6,7 @@
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 19:09:14 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/25 20:16:56 by mmasstou         ###   ########.fr       */
+/*   Updated: 2022/04/27 02:42:54 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ps_error(char *msg)
 {
-	ft_printf("%s%s%s%s\n", _RED, _BOLD, msg, _END);
+	ft_printf("%s%s%s%s%s\n", _REV, _RED, _BOLD, msg, _END);
 	exit(1);
 }

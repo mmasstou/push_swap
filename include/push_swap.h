@@ -6,7 +6,7 @@
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 22:10:04 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/26 06:44:01 by mmasstou         ###   ########.fr       */
+/*   Updated: 2022/04/27 00:23:38 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ void	rr(t_stk *stk, int print_option);
 void	rra(t_stk *stk, int print_option);
 void	rrb(t_stk *stk, int print_option);
 void	rrr(t_stk *stk, int print_option);
-void	pa(t_stk *stk, int print_option);
-void	pb(t_stk *stk, int print_option);
+void	pa(t_stk **stk, int print_option);
+void	pb(t_stk **stk, int print_option);
 // srcs
 char	**cheak_args(int argc, char *arg[]);
 t_ps	*manage_args(char **args);
@@ -77,6 +77,7 @@ void	ps_sorte_four(t_stk **stk);
 void	ps_sorte_five(t_stk **stk);
 void	ps_sorte_big_nbrs(t_stk **stk, int argc);
 t_env	*create_env(int argc);
+void	free_tab(char **tab);
 // checker
 int		check_instruction(char *inst);
 void	exicute_instraction(t_stk **stk, char *instraction);

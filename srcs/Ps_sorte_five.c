@@ -6,7 +6,7 @@
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 19:09:40 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/26 06:57:41 by mmasstou         ###   ########.fr       */
+/*   Updated: 2022/04/27 02:33:07 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	make_push(t_stk **stk)
 {
-	pb(*stk, P_YES);
+	pb(stk, P_YES);
 	ps_sorte_four(stk);
-	pa(*stk, P_YES);
+	pa(stk, P_YES);
 }
 
 static void	five_else(t_stk **stk, int pos)
@@ -25,18 +25,21 @@ static void	five_else(t_stk **stk, int pos)
 	{
 		ra(*stk, P_YES);
 		sa(*stk, P_YES);
-		make_push(stk);
+		if (!is_sorted((*stk)->a))
+			make_push(stk);
 	}
 	else if (pos == 4)
 	{
 		rra(*stk, P_YES);
 		rra(*stk, P_YES);
-		make_push(stk);
+		if (!is_sorted((*stk)->a))
+			make_push(stk);
 	}
 	else if (pos == 5)
 	{
 		rra(*stk, P_YES);
-		make_push(stk);
+		if (!is_sorted((*stk)->a))
+			make_push(stk);
 	}
 }
 
@@ -51,7 +54,8 @@ void	ps_sorte_five(t_stk **stk)
 	else if (pos == 2)
 	{
 		sa(*stk, P_YES);
-		make_push(stk);
+		if (!is_sorted((*stk)->a))
+			make_push(stk);
 	}
 	five_else(stk, pos);
 }

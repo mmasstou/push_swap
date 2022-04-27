@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ps_sorte.c                                         :+:      :+:    :+:   */
+/*   free_tab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 19:09:51 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/27 01:56:49 by mmasstou         ###   ########.fr       */
+/*   Created: 2022/04/27 00:23:23 by mmasstou          #+#    #+#             */
+/*   Updated: 2022/04/27 01:56:16 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ps_sorte(t_stk **stk, int argc)
+void	free_tab(char **tab)
 {
-	(*stk)->b = NULL;
-	if (!is_sorted((*stk)->a))
-	{
-		if (argc == 2)
-			ps_sorte_tow(stk);
-		else if (argc == 3)
-			ps_sorte_three(stk);
-		else if (argc == 4)
-			ps_sorte_four(stk);
-		else if (argc == 5)
-			ps_sorte_five(stk);
-		else
-			ps_sorte_big_nbrs(stk, argc);
-	}
+	int	idx;
+
+	idx = -1;
+	while (tab[++idx])
+		free(tab[idx]);
+	free(tab);
 }

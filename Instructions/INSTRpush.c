@@ -6,34 +6,40 @@
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 20:24:00 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/26 06:11:38 by mmasstou         ###   ########.fr       */
+/*   Updated: 2022/04/27 01:54:08 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	pa(t_stk *stk, int print_option)
+void	pa(t_stk **stk, int print_option)
 {
+	t_ps	*head;
 	t_ps	*temp;
 
-	if (stk->b == NULL)
+	if ((*stk)->b == NULL)
 		return ;
-	temp = sll_lstnew(stk->b->data, stk->b->key);
-	sll_lstadd_front(&(stk->a), temp);
-	sll_lstdelone(&(stk->b), DLL_FIRST);
+	temp = (*stk)->b;
+	head = (*stk)->b->next;
+	temp->next = NULL;
+	sll_lstadd_front(&(*stk)->a, temp);
+	(*stk)->b = head;
 	if (print_option == P_YES)
 		ft_putendl_fd("pa", 1);
 }
 
-void	pb(t_stk *stk, int print_option)
+void	pb(t_stk **stk, int print_option)
 {
+	t_ps	*head;
 	t_ps	*temp;
 
-	if (stk->a == NULL)
+	if ((*stk)->a == NULL)
 		return ;
-	temp = sll_lstnew(stk->a->data, stk->a->key);
-	sll_lstadd_front(&(stk->b), temp);
-	sll_lstdelone(&(stk->a), DLL_FIRST);
+	temp = (*stk)->a;
+	head = (*stk)->a->next;
+	temp->next = NULL;
+	sll_lstadd_front(&(*stk)->b, temp);
+	(*stk)->a = head;
 	if (print_option == P_YES)
 		ft_putendl_fd("pb", 1);
 }

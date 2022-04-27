@@ -6,7 +6,7 @@
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 19:09:09 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/25 20:16:27 by mmasstou         ###   ########.fr       */
+/*   Updated: 2022/04/27 02:43:48 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 static void	print_result(char *result)
 {
-	ft_putendl_fd(result, 1);
+	ft_printf("%s%s%s%s%s\n", _REV,_GREEN, _BOLD, result, _END);
+	// ft_putendl_fd(result, 1);
 	exit(0);
 }
 
@@ -25,14 +26,17 @@ void	manage_instructions(t_stk **stk)
 	t_ps	*stack;
 
 	size = sll_lstsize((*stk)->a);
+	(*stk)->b = NULL;
 	while (1)
 	{
 		buffer = get_next_line(0);
 		if (buffer == NULL)
+		{
+			free(buffer);
 			break ;
-		if (check_instruction(buffer) == 1)
-			ps_error("Error");
+		}
 		exicute_instraction(stk, buffer);
+		free(buffer);
 	}
 	stack = (*stk)->a;
 	ps_indexing(&stack);

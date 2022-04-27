@@ -6,7 +6,7 @@
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 22:02:50 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/26 07:30:52 by mmasstou         ###   ########.fr       */
+/*   Updated: 2022/04/27 01:58:07 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sll_lstadd_back(t_ps **lst, t_ps *new)
 {
 	t_ps	*n;
 
-	if (*lst == NULL || !lst )
+	if (*lst == NULL || !lst)
 		*lst = new;
 	else
 	{
@@ -26,5 +26,3 @@ void	sll_lstadd_back(t_ps **lst, t_ps *new)
 		n->next = new;
 	}
 }
-
-

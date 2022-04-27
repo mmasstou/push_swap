@@ -6,21 +6,11 @@
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 19:10:05 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/26 06:53:19 by mmasstou         ###   ########.fr       */
+/*   Updated: 2022/04/27 01:57:25 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-void	free_tab(char **tab)
-{
-	int		idx;
-
-	idx = -1;
-	while (tab[++idx])
-		free(tab[idx]);
-	free(tab);
-}
 
 int	sizing_stack(char **args)
 {
@@ -44,10 +34,6 @@ int	main(int argc, char *argv[])
 	stk = malloc(sizeof(t_stk));
 	if (!stk)
 		return (1);
-	// stk->a = malloc(sizeof(t_ps));
-	// stk->b = malloc(sizeof(t_ps));
-	// if (!stk->a || !stk->b)
-	// 	return (1);
 	args = cheak_args(argc, argv);
 	stk->a = manage_args(args);
 	ps_indexing(&stk->a);
@@ -58,10 +44,8 @@ int	main(int argc, char *argv[])
 	{
 		now = stk->a->next;
 		free(stk->a);
-		stk->a = now;		
+		stk->a = now;
 	}
 	free(stk);
-	// system("leaks push_swap");
-	
 	return (0);
 }

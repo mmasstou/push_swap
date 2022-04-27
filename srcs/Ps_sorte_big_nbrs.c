@@ -6,7 +6,7 @@
 /*   By: mmasstou <mmasstou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 19:09:31 by mmasstou          #+#    #+#             */
-/*   Updated: 2022/04/26 07:16:25 by mmasstou         ###   ########.fr       */
+/*   Updated: 2022/04/26 22:46:55 by mmasstou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ static void	big_nbrs_pa(t_stk **stk, t_env	*env)
 	{
 		if ((*stk)->a->key <= env->s_index)
 		{
-			pb(*stk, P_YES);
+			pb(stk, P_YES);
 			rb(*stk, P_YES);
 			env->s_index++;
 		}
 		else if ((*stk)->a && (*stk)->a->key <= (env->s_index + env->e_index))
 		{
-			pb(*stk, P_YES);
+			pb(stk, P_YES);
 			env->s_index++;
 		}
 		else
@@ -48,7 +48,7 @@ static void	rrb_op(t_stk **stk, t_env	*env)
 		rrb(*stk, P_YES);
 		m--;
 	}
-	pa(*stk, P_YES);
+	pa(stk, P_YES);
 }
 
 static void	rb_op(t_stk **stk, t_env *env)
@@ -61,7 +61,7 @@ static void	rb_op(t_stk **stk, t_env *env)
 		rb(*stk, P_YES);
 		m--;
 	}
-	pa(*stk, P_YES);
+	pa(stk, P_YES);
 }
 
 void	ps_sorte_big_nbrs(t_stk **stk, int argc)
