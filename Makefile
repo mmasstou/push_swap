@@ -28,20 +28,23 @@ SLL_ObJ			= $(SLL_SRC:.c=.o)
 INSTR_OBJ		= $(INSTR_SRC:.c=.o)
 
 %.o:%.c  
-	@${CC} ${CFLAGS} -I . -o $@ -c $<
+	@${CC} ${CFLAGS}  -o $@ -c $<
 	@printf "\x1b[36m   +>\033[0m compiling \033[38;5;42m$< \033[0m\n"
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(SLL_ObJ) $(INSTR_OBJ) _libft $(MANDATORY_OBJS)
+$(NAME): _libft $(OBJS) $(SLL_ObJ) $(INSTR_OBJ) $(MANDATORY_OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) $(SLL_ObJ) $(MANDATORY_OBJS)  $(INSTR_OBJ) $(LIBFT_NAME) -o $(NAME)
+	@echo "\x1b[36m   +> MANDATORY \033[0m\033[38;5;42m [Done] \033[0m";
 
 _libft : 
 	@make bonus -C $(LIBFT_DIR)
 	@cp $(LIBFT_DIR)$(LIBFT_NAME) .
 
-bonus : _libft $(BONUS_OBJS) $(INSTR_OBJ) $(OBJS) $(SLL_ObJ)
-	@$(CC) $(CFLAGS) $(OBJS) $(SLL_ObJ) $(INSTR_OBJ) $(BONUS_OBJS)  $(LIBFT_NAME) -o $(BONUSNAME) 
+bonus : _libft $(OBJS) $(SLL_ObJ) $(INSTR_OBJ)  $(BONUS_OBJS) 
+	@$(CC) $(CFLAGS) $(OBJS) $(SLL_ObJ) $(INSTR_OBJ) $(BONUS_OBJS)  $(LIBFT_NAME) -o $(BONUSNAME)
+	@echo "\x1b[36m   +> BONUS \033[0m\033[38;5;42m [Done] \033[0m";
+
 
 push:fclean
 	@git status
